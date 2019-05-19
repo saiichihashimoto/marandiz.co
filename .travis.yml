@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - 11
+branches:
+  only:
+    - master
+script:
+  - npm run build
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+        local_dir: build
+        target_branch: gh-pages
+        keep_history: true
