@@ -1,0 +1,39 @@
+{
+  "name": "pinterestadexamples.com",
+  "version": "0.0.0-development",
+  "homepage": "https://pinterestadexamples.com",
+  "bugs": {
+    "url": "https://github.com/saiichihashimoto/pinterestadexamples.com/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saiichihashimoto/pinterestadexamples.com.git"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "start": "react-scripts start"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "eslintConfig": {
+    "extends": "saiichihashimoto"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-saiichihashimoto"
+  },
+  "dependencies": {
+    "react-scripts": "3.0.1"
+  },
+  "devDependencies": {
+    "eslint-config-saiichihashimoto": "1.2.18",
+    "husky": "2.3.0",
+    "lint-my-app": "3.3.26",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "stylelint-config-saiichihashimoto": "1.0.15"
+  }
+}
