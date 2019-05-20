@@ -10,7 +10,7 @@
     "url": "git+https://github.com/saiichihashimoto/pinterestadexamples.com.git"
   },
   "scripts": {
-    "build": "react-scripts build",
+    "build": "cross-env REACT_APP_GOOGLE_SHEETS=\"$(curl -s http://gsx2json.com/api?id=$GOOGLE_SHEETS_ID)\" react-scripts build",
     "postbuild": "react-snap",
     "start": "react-scripts start"
   },
@@ -30,6 +30,7 @@
     "react-scripts": "3.0.1"
   },
   "devDependencies": {
+    "cross-env": "5.2.0",
     "eslint-config-saiichihashimoto": "1.2.18",
     "husky": "2.3.0",
     "lint-my-app": "3.3.26",
