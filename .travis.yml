@@ -12,8 +12,9 @@ jobs:
       node_js: lts/*
       deploy:
         provider: pages
-        skip_cleanup: true
-        github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-        local_dir: build
+        fqdn: pinterestadexamples.com
+        github_token: $GITHUB_TOKEN
         target_branch: gh-pages
+        local_dir: build
+        skip_cleanup: true
         keep_history: true
