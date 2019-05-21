@@ -5,6 +5,6 @@ import App from './components/App';
 
 const rootElement = document.getElementById('root');
 const googleSheets = JSON.parse(document.getElementById('googleSheets').innerHTML);
-const hydrateOrRender = rootElement.hasChildNodes() ? hydrate : render;
+const mount = rootElement.hasChildNodes() ? hydrate : render;
 
-hydrateOrRender(<App googleSheets={googleSheets} />, rootElement);
+mount(<App googleSheets={googleSheets} />, rootElement);
