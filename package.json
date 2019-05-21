@@ -27,6 +27,7 @@
     "extends": "stylelint-config-saiichihashimoto"
   },
   "dependencies": {
+    "react-helmet": "5.2.1",
     "react-scripts": "3.0.1"
   },
   "devDependencies": {
