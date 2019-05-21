@@ -9,8 +9,8 @@ function AdBlock({ ads = [] }) {
 			columnWidth={260}
 			gutterWidth={0}
 			gutterHeight={0}>
-			{ads.map((ad, index) => (
-				<div key={index} className={styles.blockContainer}>
+			{ads.map((ad) => (
+				<div key={ad.name} className={styles.blockContainer}>
 					<div className={styles.block}>
 						<pre>{JSON.stringify(ad, null, 4)}</pre>
 					</div>
