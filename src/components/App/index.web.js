@@ -28,6 +28,10 @@ function App({ googleSheets: { rows } }) {
 				<meta name="theme-color" content="#000000" />
 			</Helmet>
 			<input autoFocus type="text" value={searchTerm} onChange={({ target: { value } }) => setSearchTerm(value)} />
+			<div>
+				<button type="button" onClick={() => setSearchTerm('Marco')}>Marco</button>
+				<button type="button" onClick={() => setSearchTerm('Shayan')}>Shayan</button>
+			</div>
 			<AdBlocks ads={ads} />
 		</Fragment>
 	);
