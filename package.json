@@ -40,7 +40,7 @@
     "react-snap": "1.23.0",
     "react-stack-grid": "0.7.1",
     "stylelint-config-saiichihashimoto": "1.0.15",
-    "use-debounce": "2.0.1"
+    "use-debounce": "2.0.2"
   },
   "reactSnap": {
     "inlineCss": true,
