@@ -9,6 +9,7 @@ build
 coverage
 data
 dump.rdb
+googlesheets.json
 lib
 node_modules/
 report.*.json

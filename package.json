@@ -10,8 +10,9 @@
     "url": "git+https://github.com/saiichihashimoto/pinterestadexamples.com.git"
   },
   "scripts": {
-    "build": "cross-env REACT_APP_GOOGLE_SHEETS=\"$(curl -s http://gsx2json.com/api?id=$GOOGLE_SHEETS_ID)\" react-scripts build",
-    "postbuild": "react-snap",
+    "prebuild": "curl -s http://gsx2json.com/api?id=$GOOGLE_SHEETS_ID -o googlesheets.json && echo http://gsx2json.com/api?id=$GOOGLE_SHEETS_ID && cat googlesheets.json && echo",
+    "build": "cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-scripts build",
+    "postbuild": "react-snap && rm googlesheets.json",
     "start": "react-scripts start"
   },
   "browserslist": [
