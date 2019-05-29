@@ -1,11 +1,13 @@
 import React, { Fragment, useState } from 'react';
+import slugify from 'slugify';
 import { Helmet } from 'react-helmet';
 import { Route, withRouter } from 'react-router-dom';
 import { useDebounce } from 'use-debounce';
 import AdBlocks from '../AdBlocks';
 import AdPage from '../AdPage';
 
-const { rows: ads = [] } = JSON.parse(document.getElementById('googleSheets').innerHTML);
+const { rows = [] } = JSON.parse(document.getElementById('googleSheets').innerHTML);
+const ads = rows.map(({ url, ...ad }) => ({ url: slugify(url), ...ad }));
 
 const adsByUrl = Object.fromEntries(ads.map((ad) => [ad.url, ad]));
 
