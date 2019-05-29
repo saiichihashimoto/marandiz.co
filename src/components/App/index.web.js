@@ -32,13 +32,18 @@ function App({ history, location: { pathname } }) {
 
 	return (
 		<Fragment>
-			<Helmet>
-				<title>Pinterest Ad Examples</title>
+			<Helmet defaultTitle="Pinterest Ad Examples" titleTemplate="%s | Pinterest Ad Examples">
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 				<meta name="theme-color" content="#000000" />
+				<meta property="og:site_name" content="Pinterest Ad Examples" />
 			</Helmet>
-			<input autoFocus type="text" value={input} onChange={({ target: { value } }) => setInputAndRedirect(value)} />
+			<input
+				type="text"
+				value={input}
+				autoFocus={useModal}
+				onChange={({ target: { value } }) => setInputAndRedirect(value)}
+				onFocus={goHome} />
 			<div>
 				<button type="button" onClick={() => setInputAndRedirect('Marco')}>Marco</button>
 				<button type="button" onClick={() => setInputAndRedirect('Shayan')}>Shayan</button>

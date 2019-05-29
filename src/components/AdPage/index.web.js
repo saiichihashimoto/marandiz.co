@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
+import { Helmet } from 'react-helmet';
 import { Redirect } from 'react-router-dom';
 import styles from './AdPage.module.scss';
 
@@ -29,8 +30,14 @@ function AdPage({ ad, ...otherProps }) {
 		return <Redirect to="/" />;
 	}
 
+	const { title } = ad;
+
 	return (
 		<AdPageContainer {...otherProps}>
+			<Helmet>
+				<title>{title}</title>
+				<meta property="og:title" content={title} />
+			</Helmet>
 			<div>Ad Page</div>
 			<pre>{JSON.stringify(ad, null, 4)}</pre>
 		</AdPageContainer>
