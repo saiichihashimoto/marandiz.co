@@ -1,13 +1,12 @@
 language: node_js
 cache: npm
 node_js:
-  - 11
+  - "12"
 script:
   - npm run build
 jobs:
   include:
     - stage: release
-      node_js: lts/*
       deploy:
         provider: pages
         fqdn: pinterestadexamples.com
