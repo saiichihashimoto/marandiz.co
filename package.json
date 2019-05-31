@@ -10,8 +10,8 @@
     "url": "git+https://github.com/saiichihashimoto/pinterestadexamples.com.git"
   },
   "scripts": {
-    "prebuild": "curl -s http://gsx2json.com/api?id=$GOOGLE_SHEETS_ID -o googlesheets.json && echo http://gsx2json.com/api?id=$GOOGLE_SHEETS_ID && cat googlesheets.json && echo",
-    "build": "cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-scripts build",
+    "prebuild": "curl -s https://spreadsheets.google.com/feeds/list/$GOOGLE_SHEETS_ID/1/public/values?alt=json | node gsx2json > googlesheets.json",
+    "build": "echo GOOGLE_SHEETS_ID $GOOGLE_SHEETS_ID && cat googlesheets.json && cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-scripts build",
     "postbuild": "react-snap && rm googlesheets.json",
     "start": "react-scripts start"
   },
@@ -30,7 +30,7 @@
   "devDependencies": {
     "cross-env": "5.2.0",
     "eslint-config-saiichihashimoto": "1.2.23",
-    "fuse.js": "3.4.4",
+    "fuse.js": "3.4.5",
     "husky": "2.3.0",
     "lint-my-app": "3.3.26",
     "node-sass": "4.12.0",
