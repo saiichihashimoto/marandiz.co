@@ -7,7 +7,9 @@ import AdBlocks from '../AdBlocks';
 import AdPage from '../AdPage';
 
 const { rows = [] } = JSON.parse(document.getElementById('googleSheets').innerHTML);
-const ads = rows.map(({ url, ...ad }) => ({ url: slugify(url), ...ad }));
+const ads = rows
+	.filter(({ url }) => url)
+	.map(({ url, ...ad }) => ({ url: slugify(url), ...ad }));
 
 const adsByUrl = Object.fromEntries(ads.map((ad) => [ad.url, ad]));
 
