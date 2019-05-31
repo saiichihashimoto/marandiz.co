@@ -14,7 +14,7 @@ process.stdin.on('end', () => {
 		]));
 
 	// eslint-disable-next-line no-console
-	console.log({
+	console.log(JSON.stringify({
 		columns: Object.fromEntries(
 			Object.entries(
 				entries.reduce((acc, entry) => {
@@ -28,5 +28,5 @@ process.stdin.on('end', () => {
 				.map(([key, value]) => [key, Object.keys(value)]),
 		),
 		rows: entries.map((row) => Object.fromEntries(row)),
-	});
+	}));
 });
