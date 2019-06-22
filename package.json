@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "cross-env": "5.2.0",
-    "eslint-config-saiichihashimoto": "1.2.26",
+    "eslint-config-saiichihashimoto": "1.2.27",
     "fuse.js": "3.4.5",
     "husky": "2.4.1",
     "lint-my-app": "3.3.29",
