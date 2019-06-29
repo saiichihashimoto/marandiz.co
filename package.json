@@ -27,24 +27,26 @@
   "stylelint": {
     "extends": "stylelint-config-saiichihashimoto"
   },
-  "devDependencies": {
-    "cross-env": "5.2.0",
-    "eslint-config-saiichihashimoto": "1.2.35",
+  "dependencies": {
     "fuse.js": "3.4.5",
-    "husky": "2.7.0",
-    "lint-my-app": "3.3.33",
-    "node-sass": "4.12.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
     "react-modal": "3.8.1",
     "react-router-dom": "5.0.1",
+    "react-stack-grid": "0.7.1",
+    "use-debounce": "2.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "5.2.0",
+    "eslint-config-saiichihashimoto": "1.2.35",
+    "husky": "2.7.0",
+    "lint-my-app": "3.3.33",
+    "node-sass": "4.12.0",
     "react-scripts": "3.0.1",
     "react-snap": "1.23.0",
-    "react-stack-grid": "0.7.1",
     "slugify": "1.3.4",
-    "stylelint-config-saiichihashimoto": "1.0.17",
-    "use-debounce": "2.1.0"
+    "stylelint-config-saiichihashimoto": "1.0.17"
   },
   "reactSnap": {
     "inlineCss": true,
