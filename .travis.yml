@@ -3,7 +3,10 @@ node_js:
   - "12"
 notifications:
   email:
-    - saiichihashimoto@gmail.com
+    recipients:
+      - saiichihashimoto@gmail.com
+    on_success: never
+    on_failure: always
 script:
   - npm run build
 jobs:
