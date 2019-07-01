@@ -40,7 +40,7 @@
   "devDependencies": {
     "cross-env": "5.2.0",
     "eslint-config-saiichihashimoto": "1.2.37",
-    "husky": "2.7.0",
+    "husky": "3.0.0",
     "lint-my-app": "3.3.36",
     "node-sass": "4.12.0",
     "react-scripts": "3.0.1",
