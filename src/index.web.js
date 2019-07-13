@@ -5,7 +5,7 @@ import { hydrate, render } from 'react-dom';
 import './index.css';
 import App from './components/App';
 
-const rootElement = document.getElementById('root');
+const rootElement = document.querySelector('#root');
 const mount = rootElement.hasChildNodes() ? hydrate : render;
 
 ReactModal.setAppElement(rootElement);
