@@ -5,7 +5,7 @@ import { useDebounce } from 'use-debounce';
 import AdBlocks from '../AdBlocks';
 import AdPage from '../AdPage';
 
-const { ads = [] } = JSON.parse(document.getElementById('googleSheets').innerHTML);
+const { ads = [] } = JSON.parse(document.querySelector('#googleSheets').innerHTML);
 
 const adsByUrl = Object.fromEntries(ads.map((ad) => [ad.url, ad]));
 
