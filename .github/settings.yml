@@ -1,0 +1,13 @@
+_extends: .github
+repository:
+  name: pinterestadexamples.com
+  homepage: https://pinterestadexamples.com
+branches:
+  - name: master
+    protection:
+      required_status_checks:
+        contexts: ['WIP', 'continuous-integration/travis-ci']
+  - name: gh-pages
+    protection:
+      enforce_admins: true
+
