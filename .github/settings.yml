@@ -10,4 +10,3 @@ branches:
   - name: gh-pages
     protection:
       enforce_admins: true
-
