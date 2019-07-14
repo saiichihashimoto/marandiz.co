@@ -35,7 +35,8 @@
     "react-dom": "16.8.6",
     "react-ga": "2.6.0",
     "react-helmet": "5.2.1",
-    "react-stack-grid": "0.7.1"
+    "react-stack-grid": "0.7.1",
+    "typeface-squada-one": "0.0.72"
   },
   "devDependencies": {
     "create-react-node-app": "3.0.23",
