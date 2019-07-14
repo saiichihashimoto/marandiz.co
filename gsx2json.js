@@ -47,5 +47,5 @@ process.stdin.on('end', () => {
 				.map(([key, value]) => [key, Object.keys(value)]),
 		),
 		rows: entries.map((row) => Object.fromEntries(row)),
-	}, null, 4));
+	}));
 });
