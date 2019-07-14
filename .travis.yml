@@ -6,6 +6,7 @@ branches:
 notifications:
   email:
     recipients:
+      - marco.marandiz@gmail.com
       - saiichihashimoto@gmail.com
     on_success: never
     on_failure: always
@@ -21,7 +22,7 @@ jobs:
       before_deploy: npm run build
       deploy:
         provider: pages
-        fqdn: pinterestadexamples.com
+        fqdn: marandiz.co
         github_token: $GITHUB_TOKEN
         target_branch: gh-pages
         local_dir: build

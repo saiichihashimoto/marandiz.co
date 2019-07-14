@@ -32,7 +32,7 @@ function App({ history, location: { pathname } }) {
 
 	return (
 		<Fragment>
-			<Helmet defaultTitle="Pinterest Ad Examples" titleTemplate="%s | Pinterest Ad Examples" />
+			<Helmet defaultTitle="marandiz.co" titleTemplate="%s | marandiz.co" />
 			<input
 				type="text"
 				value={input}
