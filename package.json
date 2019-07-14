@@ -1,13 +1,13 @@
 {
-  "name": "pinterestadexamples.com",
+  "name": "marandiz.co",
   "version": "0.0.0-development",
-  "homepage": "https://pinterestadexamples.com",
+  "homepage": "https://marandiz.co",
   "bugs": {
-    "url": "https://github.com/saiichihashimoto/pinterestadexamples.com/issues"
+    "url": "https://github.com/saiichihashimoto/marandiz.co/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saiichihashimoto/pinterestadexamples.com.git"
+    "url": "git+https://github.com/saiichihashimoto/marandiz.co.git"
   },
   "scripts": {
     "prebuild": "curl -s https://spreadsheets.google.com/feeds/list/$GOOGLE_SHEETS_ID/1/public/values?alt=json | node gsx2json > googlesheets.json",
