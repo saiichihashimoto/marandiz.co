@@ -48,5 +48,13 @@
   },
   "engines": {
     "node": "12.6.0"
+  },
+  "reactSnap": {
+    "inlineCss": true,
+    "skipThirdPartyRequests": true,
+    "viewport": {
+      "width": 1440,
+      "height": 821
+    }
   }
 }
