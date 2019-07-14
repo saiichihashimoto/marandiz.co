@@ -47,7 +47,6 @@
     "lint-my-app": "3.3.44",
     "node-sass": "4.12.0",
     "react-snap": "1.23.0",
-    "slugify": "1.3.4",
     "stylelint-config-saiichihashimoto": "1.0.20"
   },
   "engines": {
