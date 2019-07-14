@@ -32,6 +32,16 @@
 	.subHeading {
 		color: #0f0;
 		text-transform: uppercase;
+
+		&::before {
+			background-image: url('./line.png');
+			background-repeat: no-repeat;
+			content: ' ';
+			display: inline-block;
+			height: 1em;
+			margin-right: 2px;
+			width: 1em;
+		}
 	}
 
 	.paragraph {
