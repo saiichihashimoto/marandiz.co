@@ -1,0 +1,27 @@
+.endorsements {
+	text-align: center;
+	width: 100%;
+}
+
+.endorsement {
+	max-height: 50px;
+	object-fit: contain;
+
+	&Container {
+		display: inline-block;
+		height: 50px;
+		margin: 5px;
+	}
+}
+
+.buffer {
+	background: #f00;
+}
+
+.instagram {
+	background: #0f0;
+}
+
+.facebook {
+	background: #00f;
+}
