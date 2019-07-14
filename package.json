@@ -12,7 +12,6 @@
   "scripts": {
     "prebuild": "npm run gsx2json",
     "build": "cat googlesheets.json && cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-node-scripts build --no-node",
-    "postbuild": "react-snap && rm googlesheets.json",
     "gsx2json": "curl -s https://spreadsheets.google.com/feeds/list/$GOOGLE_SHEETS_ID/1/public/values?alt=json | node gsx2json > googlesheets.json",
     "prestart": "GOOGLE_SHEETS_ID=1d-OXGFqYfjU1FLXB17mYZTSD71USRMX_W0zGQWt5HCI npm run gsx2json",
     "start": "REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-node-scripts start --no-node"
@@ -42,17 +41,9 @@
     "husky": "3.0.0",
     "lint-my-app": "3.3.44",
     "node-sass": "4.12.0",
-    "react-snap": "1.23.0",
     "stylelint-config-saiichihashimoto": "1.0.20"
   },
   "engines": {
     "node": "12.6.0"
-  },
-  "reactSnap": {
-    "inlineCss": true,
-    "viewport": {
-      "width": 1440,
-      "height": 821
-    }
   }
 }
