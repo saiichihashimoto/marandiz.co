@@ -1,27 +1,29 @@
 .endorsements {
-	text-align: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 	width: 100%;
-}
 
-.endorsement {
-	max-height: 50px;
-	object-fit: contain;
-
-	&Container {
-		display: inline-block;
-		height: 50px;
-		margin: 5px;
+	@media (max-width: 800px) {
+		align-items: center;
+		flex-direction: column;
 	}
-}
 
-.buffer {
-	background: #f00;
-}
+	.endorsement {
+		height: 50px;
+		width: 150px;
 
-.instagram {
-	background: #0f0;
-}
+		&.buffer {
+			background: #f00;
+		}
 
-.facebook {
-	background: #00f;
+		&.instagram {
+			background: #0f0;
+		}
+
+		&.facebook {
+			background: #00f;
+		}
+	}
 }
