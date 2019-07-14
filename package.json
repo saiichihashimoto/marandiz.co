@@ -11,9 +11,9 @@
   },
   "scripts": {
     "prebuild": "curl -s https://spreadsheets.google.com/feeds/list/$GOOGLE_SHEETS_ID/1/public/values?alt=json | node gsx2json > googlesheets.json",
-    "build": "echo GOOGLE_SHEETS_ID $GOOGLE_SHEETS_ID && cat googlesheets.json && cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-scripts build",
+    "build": "echo GOOGLE_SHEETS_ID $GOOGLE_SHEETS_ID && cat googlesheets.json && cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-node-scripts build --no-node",
     "postbuild": "react-snap && rm googlesheets.json",
-    "start": "react-scripts start"
+    "start": "react-node-scripts start --no-node --ngrok"
   },
   "browserslist": [
     ">0.2%",
@@ -38,15 +38,18 @@
     "use-debounce": "2.1.0"
   },
   "devDependencies": {
+    "create-react-node-app": "3.0.23",
     "cross-env": "5.2.0",
     "eslint-config-saiichihashimoto": "1.3.3",
     "husky": "3.0.0",
     "lint-my-app": "3.3.44",
     "node-sass": "4.12.0",
-    "react-scripts": "3.0.1",
     "react-snap": "1.23.0",
     "slugify": "1.3.4",
     "stylelint-config-saiichihashimoto": "1.0.20"
+  },
+  "engines": {
+    "node": "12.6.0"
   },
   "reactSnap": {
     "inlineCss": true,
