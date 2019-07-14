@@ -8,3 +8,17 @@
 		padding: 14px 12px;
 	}
 }
+
+.tag {
+	border: 1px solid #000;
+	border-radius: 12px;
+	cursor: pointer;
+	display: inline-block;
+	margin: 2px;
+	padding: 4px;
+	user-select: none;
+
+	&.selected {
+		background: #0f0;
+	}
+}
