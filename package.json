@@ -30,14 +30,10 @@
     "extends": "stylelint-config-saiichihashimoto"
   },
   "dependencies": {
-    "fuse.js": "3.4.5",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
-    "react-modal": "3.8.2",
-    "react-router-dom": "5.0.1",
-    "react-stack-grid": "0.7.1",
-    "use-debounce": "2.1.0"
+    "react-stack-grid": "0.7.1"
   },
   "devDependencies": {
     "create-react-node-app": "3.0.23",
