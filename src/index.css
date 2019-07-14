@@ -1,6 +1,63 @@
 /* stylelint-disable selector-max-type */
 @import-normalize;
 
+@import '~typeface-squada-one';
+
+/*
+ * (If you're here for FONTS, skip to the `body` block)
+ *
+ * ****************************
+ * *** DON'T USE THIS FILE! ***
+ * ****************************
+ *
+ * It's tempting.
+ *
+ * It feels easier.
+ *
+ * Don't do it.
+ *
+ * Make CSS classes in .module.scss files alongside the component and use them.
+ *
+ * You want to reuse a class in multiple components?
+ *
+ * DON'T PUT CSS CLASSES YOU WANT TO REUSE HERE
+ *
+ * CSS Classes DO NOT work how you think in here.
+ *
+ * Make a .module.scss file like src/components/MyCoolSharedStyles.scss
+ *
+ * Then use `composes` to "inherit" them. (ie composes: sharedClass from '../MyCoolSharedStyles.scss')
+ *
+ * https://github.com/css-modules/css-modules#composition
+ * https://github.com/css-modules/css-modules#dependencies
+ *
+ * ONLY use this file to style HTML elements.
+ *
+ * For example, if EVERY `input` has that focus glow outline, then globally remove it here.
+ *
+ * But even that.
+ *
+ * You ever think "Why aren't my styles applying? Maybe I should use an !important"
+ *
+ * It's because you did something here.
+ *
+ * If you do things in here:
+ *
+ * @saiichihashimoto will not help you.
+ *
+ * He won't even look.
+ *
+ * Your cry for help will be left as "read".
+ *
+ * And then he will link to this message.
+ *
+ * https://youtu.be/ARDhJ2dpuYU?t=45
+ *
+ * ****************************
+ * *** YOU HAVE BEEN WARNED ***
+ * ****************************
+ */
+
 *,
 ::after,
 ::before {
@@ -12,4 +69,28 @@
 a {
 	color: inherit;
 	text-decoration: inherit;
+}
+
+body {
+	/*
+	 * *************
+	 * *** FONTS ***
+	 * *************
+	 *
+	 * - Put in the font-family first.
+	 * - Disable the font locally in the "Font Book" app.
+	 *   - https://stackoverflow.com/questions/33205574/how-to-turn-off-local-fonts-to-test-google-fonts
+	 * - Now the font shouldn't show up on the site.
+	 *   - You don't want to THINK your font works because you have it installed locally.
+	 * - npm install the font
+	 *   - Here's a massive list: https://github.com/KyleAMathews/typefaces/tree/master/packages
+	 * - @import it in the .module.scss file, like this file is doing at the top (DON'T IGNORE THE ~)
+	 *   - The .module.scss file wouldn't work for me, so maybe do it in this file. #whatever
+	 * - You should see the font working!
+	 *
+	 * Why not <link> directly to Google Fonts?
+	 *
+	 * https://www.bricolage.io/typefaces-easiest-way-to-self-host-fonts/
+	 */
+	font-family: 'Squada One', cursive;
 }

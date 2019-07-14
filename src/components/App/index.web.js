@@ -20,6 +20,7 @@ function App() {
 				<link rel="icon" type="image/png" sizes="32x32" href={`${process.env.PUBLIC_URL}/favicon-32x32.png`} />
 				<link rel="icon" type="image/png" sizes="16x16" href={`${process.env.PUBLIC_URL}/favicon-16x16.png`} />
 				<link rel="manifest" href={`${process.env.PUBLIC_URL}/site.webmanifest`} />
+				{/* DON'T PUT FONTS HERE! LOOK HERE https://github.com/saiichihashimoto/marandiz.co/blob/master/src/index.css */}
 			</Helmet>
 			<Header />
 			<Offerings />
