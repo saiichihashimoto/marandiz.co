@@ -41,7 +41,7 @@
   "devDependencies": {
     "create-react-node-app": "3.0.25",
     "cross-env": "5.2.0",
-    "eslint-config-saiichihashimoto": "2.0.11",
+    "eslint-config-saiichihashimoto": "2.0.12",
     "husky": "3.0.1",
     "lint-my-app": "3.5.0",
     "node-sass": "4.12.0",
