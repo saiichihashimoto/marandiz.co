@@ -1,51 +1,52 @@
-const input = [];
+const fs = require('fs').promises;
 
-process.stdin.setEncoding('utf8');
+const request = require('request-promise-native');
 
-process.stdin.on('data', (chunk) => input.push(chunk));
+async function gsx2json() {
+	const { feed: { entry: raw = [] } } = await request({
+		uri:  `https://spreadsheets.google.com/feeds/list/${process.env.GOOGLE_SHEETS_ID}/1/public/values?alt=json`,
+		json: true,
+	});
 
-process.stdin.on('end', () => {
-	const { feed: { entry: raw = [] } } = JSON.parse(input.join(''));
+	const entries = raw.map((row) => Object.entries(row)
+		.map(([key, { $t: value }]) => (
+			key === 'id'
+				? ['gsx$id', value.replace(/^.*\//u, '')]
+				: [key, value]
+		))
+		.filter(([key, value]) => key.startsWith('gsx$') && value !== '')
+		.map(([key, value]) => [key.substr(4), value])
+		.map(([key, value]) => [
+			key,
+			Number.isNaN(Number(value))
+				? value
+				: Number(value),
+		]));
 
-	const entries = raw.map((row) => (
-		Object.entries(row)
-			.map(([key, { $t: value }]) => (
-				(key === 'id') ?
-					['gsx$id', value.replace(/^.*\//, '')] :
-					[key, value]
-			))
-			.filter(([key, value]) => key.startsWith('gsx$') && value !== '')
-			.map(([key, value]) => [key.substr(4), value])
-			.map(([key, value]) => [
-				key,
-				!Number.isNaN(Number(value)) ?
-					Number(value) :
-					value,
-			])
-			.map(([key, value]) => [
-				key,
-				(key === 'tags') ?
-					value.split(',') :
-					value,
-			])
-	));
+	const json = {
+		columns: Object.fromEntries(Object.entries(entries.reduce((acc, entry) => {
+			entry.forEach(([key, value]) => {
+				acc[key] = acc[key] || {};
+				(Array.isArray(value) ? value : [value]).forEach((val) => {
+					acc[key][val] = true;
+				});
+			});
 
-	// eslint-disable-next-line no-console
-	console.log(JSON.stringify({
-		columns: Object.fromEntries(
-			Object.entries(
-				entries.reduce((acc, entry) => {
-					entry.forEach(([key, value]) => {
-						acc[key] = acc[key] || {};
-						(Array.isArray(value) ? value : [value]).forEach((val) => {
-							acc[key][val] = true;
-						});
-					});
-					return acc;
-				}, {}),
-			)
-				.map(([key, value]) => [key, Object.keys(value)]),
-		),
+			return acc;
+		}, {}))
+			.map(([key, value]) => [key, Object.keys(value)])),
 		rows: entries.map((row) => Object.fromEntries(row)),
-	}));
-});
+	};
+
+	let filehandle;
+
+	try {
+		filehandle = await fs.open('googlesheets.json', 'w');
+
+		await filehandle.writeFile(JSON.stringify(json));
+	} finally {
+		await filehandle.close();
+	}
+}
+
+gsx2json();

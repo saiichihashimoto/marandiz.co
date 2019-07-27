@@ -1,24 +1,93 @@
-.thread {
-	background: #f00;
-	border-radius: 12px;
-	display: block;
-	padding: 12px;
+@import '../variables.module.scss';
 
-	&Container {
-		padding: 14px 12px;
+$thread-width: 300px;
+$thread-margin: 40px;
+
+.header {
+	composes: header from '../common.module.scss';
+}
+
+.threads {
+	display: flex;
+	flex-wrap: wrap;
+	width: calc(3 * #{$thread-width} + 4 * #{$thread-margin});
+	padding-left: $thread-margin;
+	margin: 0 auto;
+
+	@media (max-width: calc(3 * #{$thread-width} + 4 * #{$thread-margin})) {
+		width: calc(2 * #{$thread-width} + 3 * #{$thread-margin});
+	}
+
+	@media (max-width: calc(2 * #{$thread-width} + 3 * #{$thread-margin})) {
+		width: auto;
+		padding-left: 0;
+		margin-right: $mobile-margins;
+		margin-left: $mobile-margins;
 	}
 }
 
-.tag {
-	border: 1px solid #000;
-	border-radius: 12px;
-	cursor: pointer;
-	display: inline-block;
-	margin: 2px;
-	padding: 4px;
-	user-select: none;
+.link {
+	composes: link from '../common.module.scss';
+}
 
-	&.selected {
-		background: #0f0;
+.thread {
+	display: flex;
+	flex-direction: column;
+	width: $thread-width;
+	padding: 20px;
+	margin-right: $thread-margin;
+	margin-bottom: $thread-margin;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+
+	@media (max-width: calc(2 * #{$thread-width} + 3 * #{$thread-margin})) {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.image {
+		height: 190px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.title {
+		font-family: 'bennet-banner';
+		font-size: 24px;
+		line-height: 29px;
+	}
+
+	.linksHeader {
+		display: none;
+		font-family: 'PT Sans';
+		font-size: 16px;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 21px;
+		color: #828282;
+		text-transform: uppercase;
+	}
+
+	.links {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.link {
+		color: $burgandy;
+		border-color: $burgandy;
+	}
+
+	&.featured {
+		width: calc(2 * #{$thread-width} + #{$thread-margin});
+
+		@media (max-width: calc(2 * #{$thread-width} + 3 * #{$thread-margin})) {
+			width: 100%;
+		}
 	}
 }

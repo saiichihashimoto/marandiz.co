@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import Endorsements from '../Endorsements';
@@ -8,7 +8,7 @@ import ThreadBlocks from '../ThreadBlocks';
 
 function App() {
 	return (
-		<Fragment>
+		<>
 			<Helmet defaultTitle="marandiz.co" titleTemplate="%s | marandiz.co">
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -20,13 +20,13 @@ function App() {
 				<link rel="icon" type="image/png" sizes="32x32" href={`${process.env.PUBLIC_URL}/favicon-32x32.png`} />
 				<link rel="icon" type="image/png" sizes="16x16" href={`${process.env.PUBLIC_URL}/favicon-16x16.png`} />
 				<link rel="manifest" href={`${process.env.PUBLIC_URL}/site.webmanifest`} />
-				{/* DON'T PUT FONTS HERE! LOOK HERE https://github.com/saiichihashimoto/marandiz.co/blob/master/src/index.css */}
+				<link rel="stylesheet" href="https://use.typekit.net/mhv2apy.css" />
 			</Helmet>
 			<Header />
 			<Offerings />
 			<Endorsements />
 			<ThreadBlocks />
-		</Fragment>
+		</>
 	);
 }
 

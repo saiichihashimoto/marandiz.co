@@ -1,61 +1,95 @@
-.offerings {
-	align-items: stretch;
-	display: flex;
-	justify-content: center;
+@import '../variables.module.scss';
 
-	@media (max-width: 500px) {
-		align-items: center;
-		flex-direction: column;
-		height: auto;
+.container {
+}
+
+.headerContainer {
+	composes: box from '../common.module.scss';
+	border-color: #ba1f33;
+	border-style: dashed;
+	border-top: 0;
+
+	.header {
+		font-family: 'PT Sans';
+		font-size: 24px;
+		font-style: normal;
+		font-weight: normal;
 	}
 }
 
-.offering {
+$offeringWidth: 400px;
+$offeringMargins: 30px;
+
+.offerings {
+	display: flex;
 	align-items: stretch;
-	background: #efefef;
+	justify-content: center;
+
+	@media (max-width: calc(2 * #{$offeringWidth} + 4 * #{$offeringMargins})) {
+		flex-direction: column;
+
+		.offering {
+			width: auto;
+			margin: 0 $mobile-margins;
+		}
+	}
+}
+
+.cta {
+	composes: link from '../common.module.scss';
+}
+
+.offering {
 	display: flex;
 	flex-direction: column;
-	margin: 0 10px 10px;
-	padding: 20px;
-	width: 300px;
+	align-items: stretch;
+	width: $offeringWidth;
+	padding: 50px 70px;
+	margin: 0 $offeringMargins;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 
-	@media (max-width: 500px) {
-		height: auto;
-		width: auto;
+	.subHeading {
+		font-family: 'PT Sans';
+		font-size: 13px;
+		font-weight: normal;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+
+		&::before {
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			margin-right: 2px;
+			content: ' ';
+			background-image: url('./line.png');
+			background-repeat: no-repeat;
+		}
 	}
 
 	.heading {
-		color: #00f;
+		font-family: 'bennet-banner';
+		font-size: 26px;
+		color: #ff4b3e;
 		text-transform: capitalize;
-	}
-
-	.subHeading {
-		color: #0f0;
-		text-transform: uppercase;
-
-		&::before {
-			background-image: url('./line.png');
-			background-repeat: no-repeat;
-			content: ' ';
-			display: inline-block;
-			height: 1em;
-			margin-right: 2px;
-			width: 1em;
-		}
 	}
 
 	.paragraph {
 		margin-bottom: 10px;
+		font-family: 'PT Sans';
+		font-size: 16px;
+		font-style: normal;
+		font-weight: normal;
+		color: #828282;
 	}
 
-	.spacer {
-		flex-grow: 1;
-	}
-
-	.button {
+	.cta {
 		align-self: center;
-		border: 1px solid #f00;
-		color: #f00;
-		padding: 5px 7px;
+		font-size: 15px;
+		color: $burgandy;
+		border: 1px solid $burgandy;
 	}
+}
+
+.spacer {
+	flex-grow: 1;
 }

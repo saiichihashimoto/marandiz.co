@@ -13,8 +13,8 @@
     "prebuild": "npm run gsx2json && cat googlesheets.json",
     "build": "cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-node-scripts build --no-node",
     "postbuild": "react-snap",
-    "gsx2json": "curl -s https://spreadsheets.google.com/feeds/list/$GOOGLE_SHEETS_ID/1/public/values?alt=json | node gsx2json > googlesheets.json",
-    "prestart": "cross-env GOOGLE_SHEETS_ID=1d-OXGFqYfjU1FLXB17mYZTSD71USRMX_W0zGQWt5HCI npm run gsx2json",
+    "gsx2json": "node -r dotenv/config gsx2json dotenv_config_path=.env.development.local",
+    "prestart": "npm run gsx2json",
     "start": "cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-node-scripts start --no-node"
   },
   "browserslist": [
@@ -27,7 +27,10 @@
     "extends": "saiichihashimoto"
   },
   "stylelint": {
-    "extends": "stylelint-config-saiichihashimoto"
+    "extends": "stylelint-config-saiichihashimoto",
+    "rules": {
+      "block-no-empty": null
+    }
   },
   "dependencies": {
     "classnames": "2.2.6",
@@ -35,13 +38,30 @@
     "react-dom": "16.8.6",
     "react-ga": "2.6.0",
     "react-helmet": "5.2.1",
-    "react-stack-grid": "0.7.1",
-    "typeface-squada-one": "0.0.72"
+    "request": "2.88.0",
+    "request-promise-native": "1.0.7",
+    "resolve-bin": "0.4.0",
+    "typeface-ibm-plex-mono": "0.0.61",
+    "typeface-pt-sans": "0.0.72"
   },
   "devDependencies": {
     "create-react-node-app": "3.0.25",
     "cross-env": "5.2.0",
-    "eslint-config-saiichihashimoto": "2.0.17",
+    "dotenv": "8.0.0",
+    "eslint": "6.1.0",
+    "eslint-config-saiichihashimoto": "2.0.18",
+    "eslint-plugin-css-modules": "2.11.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jest": "22.14.0",
+    "eslint-plugin-jest-formatting": "0.1.0",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-node": "9.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "1.6.1",
+    "eslint-plugin-unicorn": "10.0.0",
+    "eslint-plugin-you-dont-need-lodash-underscore": "6.5.0",
+    "eslint-plugin-you-dont-need-momentjs": "1.5.0",
     "husky": "3.0.1",
     "lint-my-app": "3.6.0",
     "node-sass": "4.12.0",

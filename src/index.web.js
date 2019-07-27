@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unused-modules */
 import React from 'react';
 import ReactGA from 'react-ga';
 import { hydrate, render } from 'react-dom';
@@ -10,7 +11,7 @@ const mount = rootElement.hasChildNodes() ? hydrate : render;
 
 mount(
 	<App />,
-	rootElement,
+	rootElement
 );
 
 if (process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID) {

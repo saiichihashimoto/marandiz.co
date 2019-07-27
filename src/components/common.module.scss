@@ -1,0 +1,39 @@
+@import './variables.module.scss';
+
+.link {
+	font-family: 'IBM Plex Mono';
+	text-align: center;
+	text-transform: uppercase;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.box {
+	$width: 650px;
+	$margins: 100px;
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	justify-content: center;
+	max-width: $width;
+	padding: 50px;
+	margin: 0 $margins;
+	border-width: 2px;
+
+	@media (max-width: calc(#{$width} + 2 * #{$margins})) {
+		margin: 0 auto;
+	}
+
+	@media (max-width: calc(#{$width} + 2 * #{$mobile-margins})) {
+		max-width: auto;
+		margin: 0 $mobile-margins;
+	}
+}
+
+.header {
+	font-family: 'bennet-banner';
+	font-size: 45px;
+	color: $burgandy;
+	text-align: center;
+	letter-spacing: 0.035em;
+}

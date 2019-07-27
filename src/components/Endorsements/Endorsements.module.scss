@@ -1,29 +1,32 @@
+.header {
+	composes: header from '../common.module.scss';
+}
+
 .endorsements {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	justify-content: center;
 	width: 100%;
 
 	@media (max-width: 800px) {
-		align-items: center;
 		flex-direction: column;
+		align-items: center;
 	}
 }
 
 .endorsement {
-	height: 50px;
 	width: 150px;
+	height: 50px;
 
 	&.buffer {
-		background: #f00;
+		background: #ff0000;
 	}
 
 	&.instagram {
-		background: #0f0;
+		background: #00ff00;
 	}
 
 	&.facebook {
-		background: #00f;
+		background: #0000ff;
 	}
 }

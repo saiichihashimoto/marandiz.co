@@ -1,21 +1,29 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import classes from 'classnames';
 
 import styles from './Header.module.scss';
 
 function Header() {
 	return (
-		<div className={styles.header}>
-			<Helmet>
-				<body className={styles.bodyBackground} />
-			</Helmet>
-			<div className={styles.logo} />
-			<div className={styles.description}>
-				Here's a description of what I do.<br />
-				Work with me<br />
-				Check out my content
+		<>
+			<div className={styles.hero}>
+				<div className={classes(styles.navigation, false && styles.sticky)}>
+					<div className={styles.logo} />
+					<a className={styles.cta} href="https://google.com" target="_blank" rel="noopener noreferrer">Contact</a>
+				</div>
+				<div className={styles.links}>
+					<a className={styles.link} href="https://google.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+					<a className={styles.link} href="https://google.com" target="_blank" rel="noopener noreferrer">Medium</a>
+					<a className={styles.link} href="https://google.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+				</div>
+				<div className={styles.spacer} />
+				<div className={styles.headerContainer}>
+					<h1 className={styles.header}>
+						We work with executive leadership of DTC companies on marketing product.
+					</h1>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 

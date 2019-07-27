@@ -2,6 +2,10 @@
 *.sublime-project
 *.sublime-workspace
 .DS_Store
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
 .idea/
 .vscode/
 Thumbs.db
