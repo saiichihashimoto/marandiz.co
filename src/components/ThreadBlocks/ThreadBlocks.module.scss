@@ -40,7 +40,7 @@ $thread-margin: 40px;
 	flex-wrap: wrap;
 	width: 3 * $thread-width + 4 * $thread-margin;
 	padding-left: $thread-margin;
-	margin: 0 $mobile-margins;
+	margin: 0 auto;
 
 	@media (max-width: 3 * $thread-width + 4 * $thread-margin) {
 		width: 2 * $thread-width + 3 * $thread-margin;
