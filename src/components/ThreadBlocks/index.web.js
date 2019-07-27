@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import classes from 'classnames';
 
 import styles from './ThreadBlocks.module.scss';
@@ -14,7 +14,14 @@ const unfilteredThreads = rows
 	.sort((a, b) => b.timestamp - a.timestamp);
 
 function ThreadBlocks() {
-	const [filter, setFilter] = useState(false);
+	const [filter, setFilter] = useState(null);
+	const containerRef = useRef();
+
+	const toggleFilter = (newFilter) => {
+		window.scrollTo(0, containerRef.current.offsetTop);
+		setFilter(filter !== newFilter && newFilter);
+	};
+
 	const threads = useMemo(
 		() => (
 			filter
@@ -26,34 +33,36 @@ function ThreadBlocks() {
 
 	return (
 		<>
-			<div className={styles.container}>
+			<div className={styles.container} ref={containerRef}>
 				<div className={styles.heading}>
 					<div className={styles.fadeAway} />
 					<h2 className={styles.header}>
 						Content + Press
 					</h2>
-					<div className={styles.filters}>
-						<button
-							type="button"
-							className={classes(styles.filter, { [styles.selected]: filter === 'article' })}
-							onClick={() => setFilter(filter !== 'article' && 'article')}
-						>
+					<div className={styles.actions}>
+						<div className={styles.filters}>
+							<button
+								type="button"
+								className={classes(styles.filter, { [styles.selected]: filter === 'article' })}
+								onClick={() => toggleFilter('article')}
+							>
 							Article
-						</button>
-						<button
-							type="button"
-							className={classes(styles.filter, { [styles.selected]: filter === 'twitter' })}
-							onClick={() => setFilter(filter !== 'twitter' && 'twitter')}
-						>
+							</button>
+							<button
+								type="button"
+								className={classes(styles.filter, { [styles.selected]: filter === 'twitter' })}
+								onClick={() => toggleFilter('twitter')}
+							>
 							Twitter
-						</button>
-						<button
-							type="button"
-							className={classes(styles.filter, { [styles.selected]: filter === 'medium' })}
-							onClick={() => setFilter(filter !== 'medium' && 'medium')}
-						>
+							</button>
+							<button
+								type="button"
+								className={classes(styles.filter, { [styles.selected]: filter === 'medium' })}
+								onClick={() => toggleFilter('medium')}
+							>
 							Medium
-						</button>
+							</button>
+						</div>
 					</div>
 				</div>
 				<div className={styles.threads}>

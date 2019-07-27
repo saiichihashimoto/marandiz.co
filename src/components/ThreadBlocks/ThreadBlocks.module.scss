@@ -32,11 +32,16 @@
 	composes: header from '../common.module.scss';
 }
 
-.filter {
+.filter,
+.link {
 	composes: redOnWhiteLink from '../common.module.scss';
 }
 
 .filters {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
 	.filter {
 		font-size: 14px;
 		outline: none;
@@ -56,24 +61,24 @@ $triple-thread-width: 3 * $thread-width + 2 * $thread-margin;
 $two-columns-width: $double-thread-width + 2 * $thread-margin;
 $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 
+.actions,
 .threads {
 	composes: useMobileMargins from '../common.module.scss';
-	display: flex;
-	flex-wrap: wrap;
 
 	@media (min-width: $two-columns-width) {
-		width: $two-columns-width;
+		width: $double-thread-width;
 		max-width: none;
-		padding-left: $thread-margin;
 	}
 
 	@media (min-width: $three-columns-width) {
-		width: $three-columns-width;
+		width: $triple-thread-width;
 	}
 }
 
-.link {
-	composes: redOnWhiteLink from '../common.module.scss';
+.threads {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .thread {
@@ -90,7 +95,6 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 
 	@media (min-width: $two-columns-width) {
 		width: $thread-width;
-		margin-right: $thread-margin;
 
 		&.featured {
 			flex-direction: row;
