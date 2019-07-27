@@ -4,7 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	background-color: $burgandy;
+	background-color: $maroon;
 	background-image: url('./gradient.jpg');
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -37,7 +37,7 @@
 
 .headerContainer {
 	composes: box from '../common.module.scss';
-	border-color: $white;
+	border-color: $almost-white;
 	border-style: solid;
 	border-bottom: 0;
 
@@ -45,14 +45,14 @@
 		font-family: 'bennet-banner', 'Playfair Display', serif;
 		font-size: 42px;
 		font-weight: bold;
-		color: $white;
+		color: $almost-white;
 	}
 }
 
 .cta,
 .link {
 	font-size: 14px;
-	color: $white;
+	color: $almost-white;
 }
 
 .cta {
@@ -60,12 +60,24 @@
 	font-weight: 600;
 	background-color: $orange;
 	border-color: $orange;
+
+	&:hover {
+		color: inherit;
+		background-color: $almost-white;
+		border-color: $almost-white;
+	}
 }
 
 .link {
 	composes: link from '../common.module.scss';
 	margin-top: 15px;
-	border-color: $white;
+	border-color: $almost-white;
+
+	&:hover {
+		font-weight: 600;
+		background-color: $maroon;
+		border-color: $maroon;
+	}
 }
 
 .logo {

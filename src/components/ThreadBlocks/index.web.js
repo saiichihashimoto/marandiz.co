@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import classes from 'classnames';
 
 import styles from './ThreadBlocks.module.scss';
 
 const { rows } = JSON.parse(document.querySelector('#googleSheets').innerHTML);
 
-const threads = rows
+const unfilteredThreads = rows
 	.map(({ timestamp, image, ...thread }) => ({
 		...thread,
 		image:     image.replace(/^https:\/\/drive\.google\.com\/open\?id=(.*)$/u, 'https://drive.google.com/uc?id=$1'),
@@ -14,6 +14,16 @@ const threads = rows
 	.sort((a, b) => b.timestamp - a.timestamp);
 
 function ThreadBlocks() {
+	const [filter, setFilter] = useState(false);
+	const threads = useMemo(
+		() => (
+			filter
+				? unfilteredThreads.filter((thread) => Boolean(thread[filter]))
+				: unfilteredThreads
+		),
+		[filter]
+	);
+
 	return (
 		<>
 			<div className={styles.container}>
@@ -22,6 +32,29 @@ function ThreadBlocks() {
 					<h2 className={styles.header}>
 						Content + Press
 					</h2>
+					<div className={styles.filters}>
+						<button
+							type="button"
+							className={classes(styles.filter, { [styles.selected]: filter === 'article' })}
+							onClick={() => setFilter(filter !== 'article' && 'article')}
+						>
+							Article
+						</button>
+						<button
+							type="button"
+							className={classes(styles.filter, { [styles.selected]: filter === 'twitter' })}
+							onClick={() => setFilter(filter !== 'twitter' && 'twitter')}
+						>
+							Twitter
+						</button>
+						<button
+							type="button"
+							className={classes(styles.filter, { [styles.selected]: filter === 'medium' })}
+							onClick={() => setFilter(filter !== 'medium' && 'medium')}
+						>
+							Medium
+						</button>
+					</div>
 				</div>
 				<div className={styles.threads}>
 					{threads.map(({ id, image, contenttitle, article, twitter, medium }) => (
@@ -37,6 +70,7 @@ function ThreadBlocks() {
 								<div className={styles.links}>
 									{article && <a className={styles.link} href={article} target="_blank" rel="noopener noreferrer">Article</a>}
 									{twitter && <a className={styles.link} href={twitter} target="_blank" rel="noopener noreferrer">Twitter</a>}
+									{twitter && <a className={styles.link} href={medium} target="_blank" rel="noopener noreferrer">Medium</a>}
 									{medium && <a className={styles.link} href={medium} target="_blank" rel="noopener noreferrer">Medium</a>}
 								</div>
 							</div>

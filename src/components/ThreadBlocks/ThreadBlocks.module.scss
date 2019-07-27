@@ -4,13 +4,13 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	background-color: $beige;
+	background-color: $almost-white;
 }
 
 .heading {
 	position: sticky;
 	top: 0;
-	background-color: $beige;
+	background-color: $almost-white;
 
 	.fadeAway {
 		position: relative;
@@ -23,13 +23,30 @@
 			height: 125px;
 			pointer-events: none;
 			content: '';
-			background: linear-gradient(to top, #ffffff 6.25%, rgba(255, 255, 255, 0) 100%);
+			background: linear-gradient(to top, $white-boy-white 6.25%, rgba(255, 255, 255, 0) 100%);
 		}
 	}
 }
 
 .header {
 	composes: header from '../common.module.scss';
+}
+
+.filter {
+	composes: redOnWhiteLink from '../common.module.scss';
+}
+
+.filters {
+	.filter {
+		font-size: 14px;
+		outline: none;
+
+		&.selected {
+			font-weight: 600;
+			color: $almost-white;
+			background-color: $maroon;
+		}
+	}
 }
 
 $thread-width: 300px;
@@ -56,7 +73,7 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 }
 
 .link {
-	composes: link from '../common.module.scss';
+	composes: redOnWhiteLink from '../common.module.scss';
 }
 
 .thread {
@@ -68,7 +85,7 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 	min-height: 306px;
 	padding: $padding;
 	margin-bottom: $thread-margin;
-	background-color: #ffffff;
+	background-color: $white-boy-white;
 	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 
 	@media (min-width: $two-columns-width) {
@@ -85,7 +102,6 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 			}
 
 			.content {
-				flex-grow: 1;
 				padding-left: $padding;
 			}
 
@@ -131,27 +147,15 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 		font-style: normal;
 		font-weight: normal;
 		line-height: 21px;
-		color: $lightGray;
+		color: $gray;
 		text-transform: uppercase;
-	}
-
-	.links {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-
-		@media (min-width: $two-columns-width) {
-			justify-content: space-between;
-		}
 	}
 
 	.link {
 		font-size: 14px;
-		color: $burgandy;
-		border-color: $burgandy;
 
-		&:only-child {
-			@media (min-width: $two-columns-width) {
+		@media (min-width: $two-columns-width) {
+			&:only-child {
 				margin-left: auto;
 			}
 		}
@@ -166,6 +170,27 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
+		}
+
+		&:hover {
+			&::after {
+				background-color: $almost-white;
+				background-image: none;
+				mask-image: url('./arrow.svg');
+				mask-position: center;
+				mask-repeat: no-repeat;
+				mask-size: cover;
+			}
+		}
+	}
+
+	.links {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		@media (min-width: $two-columns-width) {
+			justify-content: space-between;
 		}
 	}
 }

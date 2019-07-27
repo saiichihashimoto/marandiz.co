@@ -9,7 +9,7 @@
 
 .headerContainer {
 	composes: box from '../common.module.scss';
-	border-color: $burgandy;
+	border-color: $maroon;
 	border-style: dashed;
 	border-top: 0;
 
@@ -26,7 +26,7 @@ $offering-margins: 30px;
 $row-width: 2 * $offering-width + 3 * $offering-margins;
 
 .cta {
-	composes: link from '../common.module.scss';
+	composes: redOnWhiteLink from '../common.module.scss';
 }
 
 .offering {
@@ -35,7 +35,7 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 	align-items: stretch;
 	width: 100%;
 	padding: 50px 70px;
-	background-color: #ffffff;
+	background-color: $white-boy-white;
 	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 
 	@media (min-width: $row-width) {
@@ -71,7 +71,7 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 		margin-bottom: 10px;
 		font-family: 'bennet-banner', 'Playfair Display', serif;
 		font-size: 26px;
-		color: $bloodOrange;
+		color: $blood-orange;
 		text-transform: capitalize;
 	}
 
@@ -82,14 +82,12 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 		font-style: normal;
 		font-weight: normal;
 		line-height: 24px;
-		color: $lightGray;
+		color: $gray;
 	}
 
 	.cta {
 		align-self: center;
 		font-size: 15px;
-		color: $burgandy;
-		border: 1px solid $burgandy;
 	}
 }
 

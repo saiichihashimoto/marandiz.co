@@ -10,6 +10,7 @@
 }
 
 .endorsements {
+	composes: useMobileMargins from '../common.module.scss';
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -24,18 +25,7 @@
 }
 
 .endorsement {
-	width: 150px;
-	height: 50px;
-
-	&.buffer {
-		background: #ff0000;
-	}
-
-	&.instagram {
-		background: #00ff00;
-	}
-
-	&.facebook {
-		background: #0000ff;
-	}
+	width: 250px;
+	height: 90px;
+	background-color: #0000ff;
 }
