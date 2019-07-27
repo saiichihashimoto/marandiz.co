@@ -34,26 +34,30 @@
 
 $thread-width: 300px;
 $thread-margin: 40px;
+$double-thread-width: 2 * $thread-width + $thread-margin;
+$triple-thread-width: 3 * $thread-width + 2 * $thread-margin;
+$centered-column-width: $double-thread-width + 2 * $mobile-margins;
+$two-columns-width: $double-thread-width + 2 * $thread-margin;
+$three-columns-width: $triple-thread-width + 2 * $thread-margin;
 
 .threads {
 	display: flex;
 	flex-wrap: wrap;
-	width: 3 * $thread-width + 4 * $thread-margin;
-	padding-left: $thread-margin;
-	margin: 0 auto;
+	max-width: $double-thread-width;
+	margin: 0 $mobile-margins;
 
-	@media (max-width: 3 * $thread-width + 4 * $thread-margin) {
-		width: 2 * $thread-width + 3 * $thread-margin;
+	@media (min-width: $centered-column-width) {
+		margin: 0 auto;
 	}
 
-	@media (max-width: 2 * $thread-width + 3 * $thread-margin) {
-		width: auto;
-		max-width: 2 * $thread-width + $thread-margin;
-		padding-left: 0;
+	@media (min-width: $two-columns-width) {
+		width: $two-columns-width;
+		max-width: none;
+		padding-left: $thread-margin;
 	}
 
-	@media (max-width: 2 * $thread-width + $thread-margin + 2 * $mobile-margins) {
-		margin: 0 $mobile-margins;
+	@media (min-width: $three-columns-width) {
+		width: $three-columns-width;
 	}
 }
 
@@ -66,23 +70,20 @@ $thread-margin: 40px;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	width: $thread-width;
+	width: 100%;
 	min-height: 400px;
 	padding: $padding;
-	margin-right: $thread-margin;
 	margin-bottom: $thread-margin;
 	background-color: #ffffff;
 	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 
-	@media (max-width: 2 * $thread-width + 3 * $thread-margin) {
-		width: 100%;
-		margin-right: 0;
-	}
+	@media (min-width: $two-columns-width) {
+		width: $thread-width;
+		margin-right: $thread-margin;
 
-	@media (min-width: 2 * $thread-width + 3 * $thread-margin + 1px) {
 		&.featured {
 			flex-direction: row;
-			width: 2 * $thread-width + $thread-margin;
+			width: $double-thread-width;
 
 			.image {
 				width: $thread-width + $thread-margin - $padding;
@@ -143,10 +144,10 @@ $thread-margin: 40px;
 	.links {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: center;
 
-		@media (max-width: 2 * $thread-width + 3 * $thread-margin) {
-			justify-content: center;
+		@media (min-width: $two-columns-width) {
+			justify-content: space-between;
 		}
 	}
 
@@ -155,8 +156,8 @@ $thread-margin: 40px;
 		color: $burgandy;
 		border-color: $burgandy;
 
-		@media (min-width: 2 * $thread-width + 3 * $thread-margin + 1px) {
-			&:only-child {
+		&:only-child {
+			@media (min-width: $two-columns-width) {
 				margin-left: auto;
 			}
 		}
