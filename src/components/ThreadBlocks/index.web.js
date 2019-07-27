@@ -46,21 +46,21 @@ function ThreadBlocks() {
 								className={classes(styles.filter, { [styles.selected]: filter === 'article' })}
 								onClick={() => toggleFilter('article')}
 							>
-							Article
+								Article
 							</button>
 							<button
 								type="button"
 								className={classes(styles.filter, { [styles.selected]: filter === 'twitter' })}
 								onClick={() => toggleFilter('twitter')}
 							>
-							Twitter
+								Twitter
 							</button>
 							<button
 								type="button"
 								className={classes(styles.filter, { [styles.selected]: filter === 'medium' })}
 								onClick={() => toggleFilter('medium')}
 							>
-							Medium
+								Medium
 							</button>
 						</div>
 					</div>
