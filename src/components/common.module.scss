@@ -20,11 +20,11 @@
 	margin: 0 $margins;
 	border-width: 2px;
 
-	@media (max-width: calc(#{$width} + 2 * #{$margins})) {
+	@media (max-width: $width + 2 * $margins) {
 		margin: 0 auto;
 	}
 
-	@media (max-width: calc(#{$width} + 2 * #{$mobile-margins})) {
+	@media (max-width: $width + 2 * $mobile-margins) {
 		max-width: auto;
 		margin: 0 $mobile-margins;
 	}

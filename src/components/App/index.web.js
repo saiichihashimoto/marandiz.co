@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import Endorsements from '../Endorsements';
+import Footer from '../Footer';
 import Header from '../Header';
 import Offerings from '../Offerings';
 import ThreadBlocks from '../ThreadBlocks';
@@ -26,6 +27,7 @@ function App() {
 			<Offerings />
 			<Endorsements />
 			<ThreadBlocks />
+			<Footer />
 		</>
 	);
 }

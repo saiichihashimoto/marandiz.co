@@ -1,28 +1,59 @@
 @import '../variables.module.scss';
 
-$thread-width: 300px;
-$thread-margin: 40px;
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: $beige;
+}
+
+.heading {
+	position: sticky;
+	top: 0;
+	background-color: $beige;
+
+	.fadeAway {
+		position: relative;
+
+		&::after {
+			position: absolute;
+			right: 0;
+			bottom: -100vh;
+			left: 0;
+			height: 125px;
+			pointer-events: none;
+			content: '';
+			background: linear-gradient(to top, #ffffff 6.25%, rgba(255, 255, 255, 0) 100%);
+		}
+	}
+}
 
 .header {
 	composes: header from '../common.module.scss';
 }
 
+$thread-width: 300px;
+$thread-margin: 40px;
+
 .threads {
 	display: flex;
 	flex-wrap: wrap;
-	width: calc(3 * #{$thread-width} + 4 * #{$thread-margin});
+	width: 3 * $thread-width + 4 * $thread-margin;
 	padding-left: $thread-margin;
-	margin: 0 auto;
+	margin: 0 $mobile-margins;
 
-	@media (max-width: calc(3 * #{$thread-width} + 4 * #{$thread-margin})) {
-		width: calc(2 * #{$thread-width} + 3 * #{$thread-margin});
+	@media (max-width: 3 * $thread-width + 4 * $thread-margin) {
+		width: 2 * $thread-width + 3 * $thread-margin;
 	}
 
-	@media (max-width: calc(2 * #{$thread-width} + 3 * #{$thread-margin})) {
+	@media (max-width: 2 * $thread-width + 3 * $thread-margin) {
 		width: auto;
+		max-width: 2 * $thread-width + $thread-margin;
 		padding-left: 0;
-		margin-right: $mobile-margins;
-		margin-left: $mobile-margins;
+	}
+
+	@media (max-width: 2 * $thread-width + $thread-margin + 2 * $mobile-margins) {
+		margin: 0 $mobile-margins;
 	}
 }
 
@@ -31,17 +62,46 @@ $thread-margin: 40px;
 }
 
 .thread {
+	$padding: 20px;
 	display: flex;
 	flex-direction: column;
+	align-items: stretch;
 	width: $thread-width;
-	padding: 20px;
+	min-height: 400px;
+	padding: $padding;
 	margin-right: $thread-margin;
 	margin-bottom: $thread-margin;
+	background-color: #ffffff;
 	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 
-	@media (max-width: calc(2 * #{$thread-width} + 3 * #{$thread-margin})) {
+	@media (max-width: 2 * $thread-width + 3 * $thread-margin) {
 		width: 100%;
 		margin-right: 0;
+	}
+
+	@media (min-width: 2 * $thread-width + 3 * $thread-margin + 1px) {
+		&.featured {
+			flex-direction: row;
+			width: 2 * $thread-width + $thread-margin;
+
+			.image {
+				width: $thread-width + $thread-margin - $padding;
+				height: 100%;
+			}
+
+			.content {
+				flex-grow: 1;
+				padding-left: $padding;
+			}
+
+			.bottomSpacer {
+				flex-grow: 1;
+			}
+
+			.linksHeader {
+				display: initial;
+			}
+		}
 	}
 
 	.image {
@@ -54,12 +114,19 @@ $thread-margin: 40px;
 	.content {
 		display: flex;
 		flex-direction: column;
+		flex-grow: 1;
+	}
+
+	.topSpacer {
+		flex-grow: 1;
 	}
 
 	.title {
+		$line-height: 29px;
+		min-height: 2 * $line-height;
 		font-family: 'bennet-banner';
 		font-size: 24px;
-		line-height: 29px;
+		line-height: $line-height;
 	}
 
 	.linksHeader {
@@ -69,25 +136,41 @@ $thread-margin: 40px;
 		font-style: normal;
 		font-weight: normal;
 		line-height: 21px;
-		color: #828282;
+		color: $lightGray;
 		text-transform: uppercase;
 	}
 
 	.links {
 		display: flex;
 		flex-direction: row;
+		justify-content: space-between;
+
+		@media (max-width: 2 * $thread-width + 3 * $thread-margin) {
+			justify-content: center;
+		}
 	}
 
 	.link {
+		font-size: 14px;
 		color: $burgandy;
 		border-color: $burgandy;
-	}
 
-	&.featured {
-		width: calc(2 * #{$thread-width} + #{$thread-margin});
+		@media (min-width: 2 * $thread-width + 3 * $thread-margin + 1px) {
+			&:only-child {
+				margin-left: auto;
+			}
+		}
 
-		@media (max-width: calc(2 * #{$thread-width} + 3 * #{$thread-margin})) {
-			width: 100%;
+		&::after {
+			display: inline-block;
+			width: 1.5em;
+			height: 0.7em;
+			margin-left: 5px;
+			content: '';
+			background-image: url('./arrow.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
 		}
 	}
 }

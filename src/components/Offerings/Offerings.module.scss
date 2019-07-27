@@ -1,11 +1,15 @@
 @import '../variables.module.scss';
 
 .container {
+	background-image: url('./background.svg');
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: 40%;
 }
 
 .headerContainer {
 	composes: box from '../common.module.scss';
-	border-color: #ba1f33;
+	border-color: $burgandy;
 	border-style: dashed;
 	border-top: 0;
 
@@ -20,21 +24,6 @@
 $offeringWidth: 400px;
 $offeringMargins: 30px;
 
-.offerings {
-	display: flex;
-	align-items: stretch;
-	justify-content: center;
-
-	@media (max-width: calc(2 * #{$offeringWidth} + 4 * #{$offeringMargins})) {
-		flex-direction: column;
-
-		.offering {
-			width: auto;
-			margin: 0 $mobile-margins;
-		}
-	}
-}
-
 .cta {
 	composes: link from '../common.module.scss';
 }
@@ -46,9 +35,11 @@ $offeringMargins: 30px;
 	width: $offeringWidth;
 	padding: 50px 70px;
 	margin: 0 $offeringMargins;
+	background-color: #ffffff;
 	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 
 	.subHeading {
+		margin-bottom: 5px;
 		font-family: 'PT Sans';
 		font-size: 13px;
 		font-weight: normal;
@@ -56,30 +47,33 @@ $offeringMargins: 30px;
 		letter-spacing: 0.05em;
 
 		&::before {
+			position: relative;
 			display: inline-block;
 			width: 1em;
 			height: 1em;
-			margin-right: 2px;
+			margin-right: 4px;
 			content: ' ';
-			background-image: url('./line.png');
+			background-image: url('./line.svg');
 			background-repeat: no-repeat;
 		}
 	}
 
 	.heading {
+		margin-bottom: 10px;
 		font-family: 'bennet-banner';
 		font-size: 26px;
-		color: #ff4b3e;
+		color: $bloodOrange;
 		text-transform: capitalize;
 	}
 
 	.paragraph {
-		margin-bottom: 10px;
+		margin-bottom: 24px;
 		font-family: 'PT Sans';
 		font-size: 16px;
 		font-style: normal;
 		font-weight: normal;
-		color: #828282;
+		line-height: 24px;
+		color: $lightGray;
 	}
 
 	.cta {
@@ -87,6 +81,21 @@ $offeringMargins: 30px;
 		font-size: 15px;
 		color: $burgandy;
 		border: 1px solid $burgandy;
+	}
+}
+
+.offerings {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+
+	@media (max-width: 2 * $offeringWidth + 4 * $offeringMargins) {
+		flex-direction: column;
+
+		.offering {
+			width: auto;
+			margin: 0 $mobile-margins;
+		}
 	}
 }
 

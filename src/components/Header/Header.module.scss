@@ -6,10 +6,11 @@
 	align-items: center;
 	width: 100%;
 	height: 100vh;
-	background-color: #ff0000;
+	background-color: $burgandy;
+	background-image: url('./gradient.jpg');
 	background-repeat: no-repeat;
-	background-position: top;
-	background-size: 100% contain;
+	background-position: top center;
+	background-size: cover;
 }
 
 .navigation {
@@ -40,7 +41,7 @@
 
 .headerContainer {
 	composes: box from '../common.module.scss';
-	border-color: #fefbf7;
+	border-color: $white;
 	border-style: solid;
 	border-bottom: 0;
 
@@ -48,27 +49,27 @@
 		font-family: 'bennet-banner';
 		font-size: 42px;
 		font-weight: bold;
-		color: #fefbf7;
+		color: $white;
 	}
 }
 
 .cta,
 .link {
 	font-size: 14px;
-	color: #fefbf7;
+	color: $white;
 }
 
 .cta {
 	composes: link from '../common.module.scss';
 	font-weight: 600;
-	background-color: #ffb20f;
-	border-color: #ffb20f;
+	background-color: $orange;
+	border-color: $orange;
 }
 
 .link {
 	composes: link from '../common.module.scss';
 	margin-top: 15px;
-	border-color: #fefbf7;
+	border-color: $white;
 }
 
 .logo {
