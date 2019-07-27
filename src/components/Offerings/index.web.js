@@ -7,7 +7,8 @@ function Offerings() {
 		<div className={styles.container}>
 			<div className={styles.headerContainer}>
 				<h2 className={styles.header}>
-					We work with executive leadership of DTC companies on marketing product.
+					With roots in tech and digital product, we elevate brands and experiences
+					through active advising and coherent customer focused strategies
 				</h2>
 			</div>
 			<div className={styles.offerings}>
@@ -29,11 +30,11 @@ function Offerings() {
 						action. We’ll follow up with a short summary and relevant action items.
 					</p>
 					<p className={styles.paragraph}>
-						After signing up, we will reach out within 1 business day to schedule our
+						After signing up, we will reach out within one business day to schedule our
 						conversation.
 					</p>
 					<div className={styles.spacer} />
-					<a className={styles.cta} href="http://google.com" target="_blank" rel="noopener noreferrer">Get Started</a>
+					<a className={styles.cta} href="http://google.com" target="_blank" rel="noopener noreferrer">Get in Touch</a>
 				</div>
 				<div className={styles.offering}>
 					<h3 className={styles.subHeading}>
@@ -44,13 +45,13 @@ function Offerings() {
 					</h2>
 					<p className={styles.paragraph}>
 						Coupling our experience with industry specific research, we identify
-						leverage points for your brand, product, and marketing, consulting you on
-						the best next steps. We work with you over a six month period, providing
-						data, insights, and advice to drive towards your business objectives.
+						leverage points for your brand, product, and marketing, advising you on the
+						best next steps. We work with you over  a six month period, providing data,
+						insights, and advice to drive towards your business objectives.
 					</p>
 					<p className={styles.paragraph}>
 						Our partners can expect two monthly, in-person meetings and an estimated
-						time of 30-35 monthly hours dedicated to your company, along with 24/7
+						time of 30-35 monthly hours dedicated to your company, along with full
 						digital access to our team.
 					</p>
 					<div className={styles.spacer} />

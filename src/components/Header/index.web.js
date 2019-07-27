@@ -18,7 +18,8 @@ function Header() {
 				<div className={styles.spacer} />
 				<div className={styles.headerContainer}>
 					<h1 className={styles.header}>
-						We work with executive leadership of DTC companies on marketing product.
+						We work with executive leadership at DTC companies on brand, digital
+						product, and marketing.
 					</h1>
 				</div>
 			</div>
