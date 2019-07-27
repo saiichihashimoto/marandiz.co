@@ -4,13 +4,15 @@
 
 .endorsements {
 	display: flex;
-	flex-flow: row wrap;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
 	justify-content: center;
 	width: 100%;
 
-	@media (max-width: 800px) {
-		flex-direction: column;
-		align-items: center;
+	@media (min-width: 800px) {
+		flex-direction: row;
+		align-items: stretch;
 	}
 }
 

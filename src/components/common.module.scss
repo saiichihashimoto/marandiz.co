@@ -15,18 +15,17 @@
 	flex-direction: column;
 	align-self: flex-start;
 	justify-content: center;
-	max-width: $width;
 	padding: 50px;
-	margin: 0 $margins;
+	margin: 0 $mobile-margins;
 	border-width: 2px;
 
-	@media (max-width: $width + 2 * $margins) {
+	@media (min-width: $width + 2 * $mobile-margins) {
+		max-width: $width;
 		margin: 0 auto;
 	}
 
-	@media (max-width: $width + 2 * $mobile-margins) {
-		max-width: auto;
-		margin: 0 $mobile-margins;
+	@media (min-width: $width + 2 * $margins) {
+		margin: 0 $margins;
 	}
 }
 

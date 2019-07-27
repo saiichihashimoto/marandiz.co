@@ -23,6 +23,7 @@
 
 $offeringWidth: 400px;
 $offeringMargins: 30px;
+$two-columns-width: 2 * $offeringWidth + 4 * $offeringMargins;
 
 .cta {
 	composes: link from '../common.module.scss';
@@ -32,11 +33,15 @@ $offeringMargins: 30px;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	width: $offeringWidth;
 	padding: 50px 70px;
-	margin: 0 $offeringMargins;
+	margin: 0 $mobile-margins;
 	background-color: #ffffff;
 	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+
+	@media (min-width: $two-columns-width) {
+		width: $offeringWidth;
+		margin: 0 $offeringMargins;
+	}
 
 	.subHeading {
 		margin-bottom: 5px;
@@ -86,16 +91,12 @@ $offeringMargins: 30px;
 
 .offerings {
 	display: flex;
+	flex-direction: column;
 	align-items: stretch;
 	justify-content: center;
 
-	@media (max-width: 2 * $offeringWidth + 4 * $offeringMargins) {
-		flex-direction: column;
-
-		.offering {
-			width: auto;
-			margin: 0 $mobile-margins;
-		}
+	@media (min-width: $two-columns-width) {
+		flex-direction: row;
 	}
 }
 
