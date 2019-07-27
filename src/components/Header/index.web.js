@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from 'classnames';
 
 import styles from './Header.module.scss';
 
@@ -7,7 +6,7 @@ function Header() {
 	return (
 		<>
 			<div className={styles.hero}>
-				<div className={classes(styles.navigation, false && styles.sticky)}>
+				<div className={styles.navigation}>
 					<div className={styles.logo} />
 					<a className={styles.cta} href="https://google.com" target="_blank" rel="noopener noreferrer">Contact</a>
 				</div>

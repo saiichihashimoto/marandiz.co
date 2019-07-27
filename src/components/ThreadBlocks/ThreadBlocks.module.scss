@@ -36,19 +36,13 @@ $thread-width: 300px;
 $thread-margin: 40px;
 $double-thread-width: 2 * $thread-width + $thread-margin;
 $triple-thread-width: 3 * $thread-width + 2 * $thread-margin;
-$centered-column-width: $double-thread-width + 2 * $mobile-margins;
 $two-columns-width: $double-thread-width + 2 * $thread-margin;
 $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 
 .threads {
+	composes: useMobileMargins from '../common.module.scss';
 	display: flex;
 	flex-wrap: wrap;
-	max-width: $double-thread-width;
-	margin: 0 $mobile-margins;
-
-	@media (min-width: $centered-column-width) {
-		margin: 0 auto;
-	}
 
 	@media (min-width: $two-columns-width) {
 		width: $two-columns-width;
@@ -71,7 +65,7 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 	flex-direction: column;
 	align-items: stretch;
 	width: 100%;
-	min-height: 400px;
+	min-height: 306px;
 	padding: $padding;
 	margin-bottom: $thread-margin;
 	background-color: #ffffff;
@@ -125,14 +119,14 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 	.title {
 		$line-height: 29px;
 		min-height: 2 * $line-height;
-		font-family: 'bennet-banner';
+		font-family: 'bennet-banner', 'Playfair Display', serif;
 		font-size: 24px;
 		line-height: $line-height;
 	}
 
 	.linksHeader {
 		display: none;
-		font-family: 'PT Sans';
+		font-family: 'PT Sans', sans-serif;
 		font-size: 16px;
 		font-style: normal;
 		font-weight: normal;

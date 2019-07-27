@@ -3,9 +3,7 @@
 .hero {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	background-color: $burgandy;
 	background-image: url('./gradient.jpg');
 	background-repeat: no-repeat;
@@ -18,25 +16,23 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	width: 100%;
 	padding-top: 50px;
-	padding-right: 100px;
-	padding-left: 100px;
-
-	&.sticky {
-		position: sticky;
-		top: 0;
-		background-color: $burgandy;
-		box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
-	}
 }
 
 .links {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	align-self: flex-end;
-	padding-right: 100px;
+	align-items: flex-end;
+}
+
+.navigation,
+.links {
+	composes: useMobileMargins from '../common.module.scss';
+
+	@media (min-width: $mobile-content-threshold + 2 * $hero-max-margins) {
+		width: auto;
+		margin: 0 $hero-max-margins;
+	}
 }
 
 .headerContainer {
@@ -46,7 +42,7 @@
 	border-bottom: 0;
 
 	.header {
-		font-family: 'bennet-banner';
+		font-family: 'bennet-banner', 'Playfair Display', serif;
 		font-size: 42px;
 		font-weight: bold;
 		color: $white;

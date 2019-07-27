@@ -1,3 +1,10 @@
+.container {
+	background-image: url('./triangle.svg');
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-size: 40%;
+}
+
 .header {
 	composes: header from '../common.module.scss';
 }

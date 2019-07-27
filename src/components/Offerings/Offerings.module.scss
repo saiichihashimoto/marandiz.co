@@ -1,7 +1,7 @@
 @import '../variables.module.scss';
 
 .container {
-	background-image: url('./background.svg');
+	background-image: url('./circle.svg');
 	background-repeat: no-repeat;
 	background-position: top right;
 	background-size: 40%;
@@ -14,16 +14,16 @@
 	border-top: 0;
 
 	.header {
-		font-family: 'PT Sans';
+		font-family: 'PT Sans', sans-serif;
 		font-size: 24px;
 		font-style: normal;
 		font-weight: normal;
 	}
 }
 
-$offeringWidth: 400px;
-$offeringMargins: 30px;
-$two-columns-width: 2 * $offeringWidth + 4 * $offeringMargins;
+$offering-width: 400px;
+$offering-margins: 30px;
+$row-width: 2 * $offering-width + 3 * $offering-margins;
 
 .cta {
 	composes: link from '../common.module.scss';
@@ -33,19 +33,23 @@ $two-columns-width: 2 * $offeringWidth + 4 * $offeringMargins;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
+	width: 100%;
 	padding: 50px 70px;
-	margin: 0 $mobile-margins;
 	background-color: #ffffff;
 	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 
-	@media (min-width: $two-columns-width) {
-		width: $offeringWidth;
-		margin: 0 $offeringMargins;
+	@media (min-width: $row-width) {
+		width: $offering-width;
+		margin-right: $offering-margins;
+
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 
 	.subHeading {
 		margin-bottom: 5px;
-		font-family: 'PT Sans';
+		font-family: 'PT Sans', sans-serif;
 		font-size: 13px;
 		font-weight: normal;
 		text-transform: uppercase;
@@ -65,7 +69,7 @@ $two-columns-width: 2 * $offeringWidth + 4 * $offeringMargins;
 
 	.heading {
 		margin-bottom: 10px;
-		font-family: 'bennet-banner';
+		font-family: 'bennet-banner', 'Playfair Display', serif;
 		font-size: 26px;
 		color: $bloodOrange;
 		text-transform: capitalize;
@@ -73,7 +77,7 @@ $two-columns-width: 2 * $offeringWidth + 4 * $offeringMargins;
 
 	.paragraph {
 		margin-bottom: 24px;
-		font-family: 'PT Sans';
+		font-family: 'PT Sans', sans-serif;
 		font-size: 16px;
 		font-style: normal;
 		font-weight: normal;
@@ -90,13 +94,15 @@ $two-columns-width: 2 * $offeringWidth + 4 * $offeringMargins;
 }
 
 .offerings {
+	composes: useMobileMargins from '../common.module.scss';
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: center;
 
-	@media (min-width: $two-columns-width) {
+	@media (min-width: $row-width) {
 		flex-direction: row;
+		width: auto;
 	}
 }
 

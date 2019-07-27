@@ -1,7 +1,22 @@
 @import './variables.module.scss';
 
+/*
+ * Use mobile margins until a threshold, then fix the width and center the content
+ *
+ * Responsibility of composer to control width & margins at next breakpoint
+ */
+
+.useMobileMargins {
+	margin: 0 $mobile-margins;
+
+	@media (min-width: $mobile-content-threshold + 2 * $mobile-margins) {
+		width: $mobile-content-threshold;
+		margin: 0 auto;
+	}
+}
+
 .link {
-	font-family: 'IBM Plex Mono';
+	font-family: 'IBM Plex Mono', sans-serif;
 	text-align: center;
 	text-transform: uppercase;
 	border-style: solid;
@@ -9,28 +24,22 @@
 }
 
 .box {
-	$width: 650px;
-	$margins: 100px;
+	composes: useMobileMargins;
 	display: flex;
 	flex-direction: column;
 	align-self: flex-start;
 	justify-content: center;
-	padding: 50px;
-	margin: 0 $mobile-margins;
+	max-width: $box-max-size;
 	border-width: 2px;
 
-	@media (min-width: $width + 2 * $mobile-margins) {
-		max-width: $width;
-		margin: 0 auto;
-	}
-
-	@media (min-width: $width + 2 * $margins) {
-		margin: 0 $margins;
+	@media (min-width: $mobile-content-threshold + 2 * $hero-max-margins) {
+		width: auto;
+		margin: 0 $hero-max-margins;
 	}
 }
 
 .header {
-	font-family: 'bennet-banner';
+	font-family: 'bennet-banner', 'Playfair Display', serif;
 	font-size: 45px;
 	color: $burgandy;
 	text-align: center;

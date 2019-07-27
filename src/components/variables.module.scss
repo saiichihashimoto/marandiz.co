@@ -6,5 +6,10 @@ $lightGray: #828282;
 $orange: #ffb20f;
 $white: #fefbf7;
 
-/* Sizes */
+/* Global Sizes */
 $mobile-margins: 25px;
+$mobile-content-threshold: 550px;
+$box-max-size: 650px;
+
+/* Hero Sizes */
+$hero-max-margins: 100px;
