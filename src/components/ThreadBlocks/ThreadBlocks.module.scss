@@ -154,11 +154,13 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 
 .thread {
 	$padding: 20px;
+	$line-height: 29px;
+	$image-height: 190px;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
+	justify-content: space-between;
 	width: 100%;
-	min-height: 306px;
 	padding: $padding;
 	margin-bottom: $thread-margin;
 	background-color: $white-boy-white;
@@ -170,14 +172,15 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 		&.featured {
 			flex-direction: row;
 			width: $double-thread-width;
+			min-height: $image-height + 2 * $line-height + 2 * $padding + 34px;
 
 			.image {
-				width: $thread-width + $thread-margin - $padding;
-				height: 100%;
+				width: $double-thread-width - $thread-width - $padding;
+				object-fit: cover;
 			}
 
 			.content {
-				padding-left: $padding;
+				width: $thread-width - 2 * $padding;
 			}
 
 			.bottomSpacer {
@@ -191,16 +194,14 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 	}
 
 	.image {
-		height: 190px;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
+		width: 100%;
+		min-height: $image-height;
+		object-fit: scale-down;
 	}
 
 	.content {
 		display: flex;
 		flex-direction: column;
-		flex-grow: 1;
 	}
 
 	.topSpacer {
@@ -208,7 +209,6 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 	}
 
 	.title {
-		$line-height: 29px;
 		min-height: 2 * $line-height;
 		font-family: 'bennet-banner', 'Playfair Display', serif;
 		font-size: 24px;
