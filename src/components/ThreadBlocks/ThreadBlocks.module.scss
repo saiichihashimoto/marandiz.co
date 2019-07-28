@@ -254,12 +254,17 @@ $between-filters-margin: 25px;
 	}
 
 	.link {
+		margin-right: $between-filters-margin;
 		font-size: 14px;
 
 		@media (min-width: $two-columns-width) {
 			&:only-child {
 				margin-left: auto;
 			}
+		}
+
+		&:last-child {
+			margin-right: 0;
 		}
 
 		&::after {
@@ -283,6 +288,19 @@ $between-filters-margin: 25px;
 				mask-position: center;
 				mask-repeat: no-repeat;
 				mask-size: cover;
+			}
+		}
+
+		&:first-child {
+			&:nth-last-child(3) {
+				&,
+				~ .link {
+					width: 72px;
+
+					&::after {
+						display: none;
+					}
+				}
 			}
 		}
 	}
