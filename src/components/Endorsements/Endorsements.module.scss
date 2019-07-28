@@ -10,11 +10,11 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
 
 	@media (min-width: 800px) {
 		flex-direction: row;
 		align-items: stretch;
+		width: auto;
 	}
 }
 

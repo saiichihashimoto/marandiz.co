@@ -36,8 +36,7 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	width: 100%;
-	height: 535px;
+	width: auto;
 	padding: 50px 70px;
 	margin-bottom: 110px;
 	background-color: $white-boy-white;
@@ -94,6 +93,7 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 
 	.spacer {
 		flex-grow: 1;
+		min-height: 15px;
 	}
 
 	.cta {
