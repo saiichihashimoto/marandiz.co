@@ -38,21 +38,42 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 }
 
 .offering {
+	$min-padding: 20px;
+	$max-padding: 70px;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	width: auto;
-	padding: 50px 70px;
+	width: 100%;
+	max-width: $offering-width;
+	padding: 50px $min-padding;
+	margin-right: auto;
 	margin-bottom: 110px;
+	margin-left: auto;
 	background-color: $white-boy-white;
 	box-shadow: $box-shadow;
 
 	@media (min-width: $row-width) {
-		width: $offering-width;
 		margin-right: $offering-margins;
+		margin-left: 0;
 
 		&:last-child {
 			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+
+	.subHeading,
+	.heading,
+	.paragraph,
+	.cta {
+		@media (min-width: $offering-width + 2 * $mobile-margins - 2 * $max-padding + 2 * $min-padding) {
+			width: 100%;
+			max-width: $offering-width - 2 * $max-padding;
+			margin: 0 auto;
+		}
+
+		@media (min-width: $offering-width + 2 * $mobile-margins) {
+			margin: 0 $max-padding - $min-padding;
 		}
 	}
 
