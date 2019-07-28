@@ -30,6 +30,7 @@
 
 .header {
 	composes: header from '../common.module.scss';
+	margin: 30px 0;
 }
 
 .filter,
@@ -41,15 +42,71 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	min-width: 3 * $button-min-size + 50px;
 
 	.filter {
 		font-size: 14px;
+		background-color: $almost-white;
 		outline: none;
+
+		&:hover {
+			padding: 7px 0;
+			color: $maroon;
+			border-width: 2px;
+		}
 
 		&.selected {
 			font-weight: 600;
 			color: $almost-white;
 			background-color: $maroon;
+		}
+	}
+}
+
+.filters,
+.form {
+	margin-bottom: 30px;
+}
+
+.submit {
+	composes: link from '../common.module.scss';
+}
+
+.label {
+	font-family: 'PT Sans', sans-serif;
+	color: $gray;
+}
+
+.inputContainer {
+	display: flex;
+	flex-direction: row;
+	min-width: 420px;
+	margin-top: 15px;
+
+	.input {
+		flex-grow: 1;
+		padding: 0 28px;
+		font-size: 16px;
+		background-color: initial;
+		border-color: $maroon;
+		border-style: solid;
+		border-width: 1px 0 1px 1px;
+		outline: none;
+	}
+
+	.submit {
+		flex-grow: 0;
+		font-size: 14px;
+		font-weight: 600;
+		color: $almost-white;
+		background-color: $maroon;
+		border-color: $maroon;
+		outline: none;
+
+		&:hover,
+		&:focus {
+			background-color: $bright-red;
+			border-color: $bright-red;
 		}
 	}
 }
@@ -64,6 +121,7 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 .actions,
 .threads {
 	composes: useMobileMargins from '../common.module.scss';
+	display: flex;
 
 	@media (min-width: $two-columns-width) {
 		width: $double-thread-width;
@@ -75,10 +133,23 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 	}
 }
 
+.actions {
+	flex-direction: column;
+	justify-content: space-between;
+
+	@media (min-width: $three-columns-width) {
+		flex-direction: row;
+		align-items: flex-end;
+	}
+}
+
 .threads {
-	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+
+	.spacer {
+		width: $thread-width;
+	}
 }
 
 .thread {

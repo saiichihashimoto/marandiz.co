@@ -18,7 +18,9 @@ function ThreadBlocks() {
 	const containerRef = useRef();
 
 	const toggleFilter = (newFilter) => {
-		window.scrollTo(0, containerRef.current.offsetTop);
+		if (window.pageYOffset > containerRef.current.offsetTop) {
+			window.scrollTo(0, containerRef.current.offsetTop);
+		}
 		setFilter(filter !== newFilter && newFilter);
 	};
 
@@ -42,27 +44,36 @@ function ThreadBlocks() {
 					<div className={styles.actions}>
 						<div className={styles.filters}>
 							<button
-								type="button"
 								className={classes(styles.filter, { [styles.selected]: filter === 'article' })}
+								type="button"
 								onClick={() => toggleFilter('article')}
 							>
 								Article
 							</button>
 							<button
-								type="button"
 								className={classes(styles.filter, { [styles.selected]: filter === 'twitter' })}
+								type="button"
 								onClick={() => toggleFilter('twitter')}
 							>
 								Twitter
 							</button>
 							<button
-								type="button"
 								className={classes(styles.filter, { [styles.selected]: filter === 'medium' })}
+								type="button"
 								onClick={() => toggleFilter('medium')}
 							>
 								Medium
 							</button>
 						</div>
+						<form className={styles.form}>
+							<label className={styles.label}>
+								Get notifed when new content comes out:
+								<div className={styles.inputContainer}>
+									<input className={styles.input} type="email" placeholder="email" />
+									<button className={styles.submit} type="submit">Subscribe</button>
+								</div>
+							</label>
+						</form>
 					</div>
 				</div>
 				<div className={styles.threads}>
@@ -247,6 +258,7 @@ function ThreadBlocks() {
 							</div>
 						</div>
 					))}
+					<div className={styles.spacer} />
 				</div>
 			</div>
 		</>
