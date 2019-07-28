@@ -16,12 +16,12 @@
 }
 
 .link {
-	min-width: $button-min-size;
+	width: $button-min-size;
+	max-width: 100%;
 	padding: 8px 0;
 	font-family: 'IBM Plex Mono', sans-serif;
 	text-align: center;
 	text-transform: uppercase;
-	white-space: nowrap;
 	cursor: pointer;
 	user-select: none;
 	border-style: solid;

@@ -60,8 +60,10 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 	composes: redOnWhiteLink from '../common.module.scss';
 }
 
+$between-filters-margin: 25px;
+
 .filters {
-	$min-width: 3 * $button-min-size + 50px;
+	$min-width: 3 * $button-min-size + 2 * $between-filters-margin;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -71,9 +73,18 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 	}
 
 	.filter {
+		margin-right: $between-filters-margin;
 		font-size: 14px;
 		background-color: $almost-white;
 		outline: none;
+
+		@media (min-width: $min-width + 2 * $mobile-margins) {
+			margin-right: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
 
 		&:hover {
 			padding: 7px 0;
