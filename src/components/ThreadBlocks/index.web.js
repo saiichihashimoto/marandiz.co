@@ -15,11 +15,11 @@ const unfilteredThreads = rows
 
 function ThreadBlocks() {
 	const [filter, setFilter] = useState(null);
-	const [hasShadow, setHasShadow] = useState(false);
+	const [headerAtTop, setHeaderAtTop] = useState(false);
 	const containerRef = useRef();
 
 	const toggleFilter = (newFilter) => {
-		if (hasShadow) {
+		if (headerAtTop) {
 			window.scrollTo(0, containerRef.current.offsetTop);
 		}
 		setFilter(filter !== newFilter && newFilter);
@@ -36,7 +36,7 @@ function ThreadBlocks() {
 
 	useEffect(() => {
 		function onScroll() {
-			setHasShadow(window.pageYOffset > containerRef.current.offsetTop);
+			setHeaderAtTop(window.pageYOffset > containerRef.current.offsetTop);
 		}
 
 		window.addEventListener('scroll', onScroll);
@@ -47,7 +47,7 @@ function ThreadBlocks() {
 	return (
 		<>
 			<div className={styles.container} ref={containerRef}>
-				<div className={classes(styles.heading, { [styles.withShadow]: hasShadow })}>
+				<div className={classes(styles.heading, { [styles.withShadow]: headerAtTop })}>
 					<div className={styles.fadeAway} />
 					<h2 className={styles.header}>
 						Content + Press
