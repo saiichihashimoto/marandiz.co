@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SubscribeInput from '../SubscribeInput';
+import { linkedInHandle, mediumHandle, twitterHandle } from '../constants';
 
 import styles from './Footer.module.scss';
 
@@ -10,7 +11,7 @@ function Footer() {
 			<div className={styles.getInTouch}>
 				<h2 className={styles.header}>Get in touch</h2>
 				<p className={styles.text}>
-					Don’t be the last to know. Subscibe to our list and get the latest updates in
+					Don’t be the last to know. Subscribe to our list and get the latest updates in
 					all things DTC.
 				</p>
 				<SubscribeInput
@@ -21,9 +22,9 @@ function Footer() {
 			</div>
 			<div className={styles.connect}>
 				<h2 className={styles.header}>Connect</h2>
-				<a className={styles.link} href="https://google.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-				<a className={styles.link} href="https://google.com" target="_blank" rel="noopener noreferrer">Medium</a>
-				<a className={styles.link} href="https://google.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+				<a className={styles.link} href={`https://twitter.com/${twitterHandle}`} target="_blank" rel="noopener noreferrer">Twitter</a>
+				<a className={styles.link} href={`https://medium.com/@${mediumHandle}`} target="_blank" rel="noopener noreferrer">Medium</a>
+				<a className={styles.link} href={`https://www.linkedin.com/in/${linkedInHandle}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
 			</div>
 		</div>
 	);

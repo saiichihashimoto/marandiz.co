@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { email } from '../constants';
+
 import styles from './Offerings.module.scss';
 
 function Offerings() {
@@ -34,7 +36,7 @@ function Offerings() {
 						conversation.
 					</p>
 					<div className={styles.spacer} />
-					<a className={styles.cta} href="http://google.com" target="_blank" rel="noopener noreferrer">Get Started</a>
+					<a className={styles.cta} href={`mailto:${email}?subject=Strategy Session`} target="_blank" rel="noopener noreferrer">Get Started</a>
 				</div>
 				<div className={styles.offering}>
 					<h3 className={styles.subHeading}>
@@ -55,7 +57,7 @@ function Offerings() {
 						digital access to our team.
 					</p>
 					<div className={styles.spacer} />
-					<a className={styles.cta} href="http://google.com" target="_blank" rel="noopener noreferrer">Get in Touch</a>
+					<a className={styles.cta} href={`mailto:${email}?subject=Growth Partnership`} target="_blank" rel="noopener noreferrer">Get in Touch</a>
 				</div>
 			</div>
 		</div>

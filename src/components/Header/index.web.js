@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { email, linkedInHandle, mediumHandle, twitterHandle } from '../constants';
+
 import styles from './Header.module.scss';
 
 function Header() {
@@ -8,12 +10,12 @@ function Header() {
 			<div className={styles.hero}>
 				<div className={styles.navigation}>
 					<div className={styles.logo} />
-					<a className={styles.cta} href="https://google.com" target="_blank" rel="noopener noreferrer">Contact</a>
+					<a className={styles.cta} href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">Contact</a>
 				</div>
 				<div className={styles.links}>
-					<a className={styles.link} href="https://google.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-					<a className={styles.link} href="https://google.com" target="_blank" rel="noopener noreferrer">Medium</a>
-					<a className={styles.link} href="https://google.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+					<a className={styles.link} href={`https://twitter.com/${twitterHandle}`} target="_blank" rel="noopener noreferrer">Twitter</a>
+					<a className={styles.link} href={`https://medium.com/@${mediumHandle}`} target="_blank" rel="noopener noreferrer">Medium</a>
+					<a className={styles.link} href={`https://www.linkedin.com/in/${linkedInHandle}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
 				</div>
 				<div className={styles.spacer} />
 				<div className={styles.headerContainer}>
