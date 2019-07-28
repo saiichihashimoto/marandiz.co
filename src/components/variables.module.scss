@@ -8,10 +8,17 @@ $orange: #ffb20f;
 $white-boy-white: #ffffff;
 
 /* Global Sizes */
+$button-min-size: 120px;
+
+/* Mobile */
 $mobile-margins: 25px;
 $mobile-content-threshold: 550px;
+
+/* Box */
 $box-max-size: 750px;
-$button-min-size: 120px;
+$box-min-padding: 20px;
+$box-max-padding: 80px;
 
 /* Hero Sizes */
 $hero-max-margins: 100px;
+$hero-at-max-margins-width: $mobile-content-threshold + 2 * $hero-max-margins;

@@ -44,14 +44,29 @@
 	composes: useMobileMargins;
 	display: flex;
 	flex-direction: column;
-	align-self: flex-start;
 	justify-content: center;
 	max-width: $box-max-size;
+	padding-right: $box-min-padding;
+	padding-left: $box-min-padding;
 	border-width: 2px;
 
-	@media (min-width: $mobile-content-threshold + 2 * $hero-max-margins) {
+	@media (min-width: $hero-at-max-margins-width) {
 		width: auto;
 		margin: 0 $hero-max-margins;
+	}
+
+	.boxContents {
+		margin: 0;
+
+		@media (min-width: $hero-at-max-margins-width) {
+			width: $mobile-content-threshold - 2 * $box-min-padding - 4px;
+			margin: 0 auto;
+		}
+
+		@media (min-width: $hero-at-max-margins-width + 2 * $box-max-padding - 2 * $box-min-padding) {
+			width: auto;
+			margin: 0 $box-max-padding - $box-min-padding;
+		}
 	}
 }
 

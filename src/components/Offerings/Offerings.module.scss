@@ -7,15 +7,20 @@
 	background-size: 410px;
 }
 
+.header {
+	composes: boxContents from '../common.module.scss';
+}
+
 .headerContainer {
 	composes: box from '../common.module.scss';
+	padding-top: 120px;
+	padding-bottom: 120px;
 	margin-bottom: 100px;
 	border-color: $maroon;
 	border-style: dashed;
 	border-top: 0;
 
 	.header {
-		padding: 120px 80px;
 		font-family: 'PT Sans', sans-serif;
 		font-size: 24px;
 		font-style: normal;

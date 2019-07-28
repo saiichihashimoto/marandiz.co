@@ -29,7 +29,7 @@
 .links {
 	composes: useMobileMargins from '../common.module.scss';
 
-	@media (min-width: $mobile-content-threshold + 2 * $hero-max-margins) {
+	@media (min-width: $hero-at-max-margins-width) {
 		width: auto;
 		margin: 0 $hero-max-margins;
 	}
@@ -39,15 +39,20 @@
 	height: 100px;
 }
 
+.header {
+	composes: boxContents from '../common.module.scss';
+}
+
 .headerContainer {
 	composes: box from '../common.module.scss';
 	flex-grow: 1;
+	padding-top: 80px;
+	padding-bottom: 80px;
 	border-color: $almost-white;
 	border-style: solid;
 	border-bottom: 0;
 
 	.header {
-		padding: 80px 80px;
 		font-family: 'bennet-banner', 'Playfair Display', serif;
 		font-size: 42px;
 		font-weight: bold;
