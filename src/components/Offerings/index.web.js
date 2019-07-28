@@ -8,7 +8,7 @@ function Offerings() {
 			<div className={styles.headerContainer}>
 				<h2 className={styles.header}>
 					With roots in tech and digital product, we elevate brands and experiences
-					through active advising and coherent customer focused strategies
+					through active advising and coherent customer focused strategies.
 				</h2>
 			</div>
 			<div className={styles.offerings}>
@@ -34,7 +34,7 @@ function Offerings() {
 						conversation.
 					</p>
 					<div className={styles.spacer} />
-					<a className={styles.cta} href="http://google.com" target="_blank" rel="noopener noreferrer">Get in Touch</a>
+					<a className={styles.cta} href="http://google.com" target="_blank" rel="noopener noreferrer">Get Started</a>
 				</div>
 				<div className={styles.offering}>
 					<h3 className={styles.subHeading}>

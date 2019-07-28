@@ -1,12 +1,6 @@
-.container {
-	background-image: url('./triangle.svg');
-	background-repeat: no-repeat;
-	background-position: bottom left;
-	background-size: 40%;
-}
-
 .header {
 	composes: header from '../common.module.scss';
+	margin-bottom: 70px;
 }
 
 .endorsements {
@@ -17,6 +11,7 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+	margin-right: -20px;
 
 	@media (min-width: 800px) {
 		flex-direction: row;
@@ -25,7 +20,11 @@
 }
 
 .endorsement {
-	width: 250px;
-	height: 90px;
-	background-color: #0000ff;
+	height: 100px;
+	margin-bottom: 60px;
+	object-fit: contain;
+
+	&.buffer {
+		padding: 25px 0;
+	}
 }

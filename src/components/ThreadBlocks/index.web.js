@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import classes from 'classnames';
 
 import styles from './ThreadBlocks.module.scss';
@@ -15,10 +15,11 @@ const unfilteredThreads = rows
 
 function ThreadBlocks() {
 	const [filter, setFilter] = useState(null);
+	const [hasShadow, setHasShadow] = useState(false);
 	const containerRef = useRef();
 
 	const toggleFilter = (newFilter) => {
-		if (window.pageYOffset > containerRef.current.offsetTop) {
+		if (hasShadow) {
 			window.scrollTo(0, containerRef.current.offsetTop);
 		}
 		setFilter(filter !== newFilter && newFilter);
@@ -33,10 +34,20 @@ function ThreadBlocks() {
 		[filter]
 	);
 
+	useEffect(() => {
+		function onScroll() {
+			setHasShadow(window.pageYOffset > containerRef.current.offsetTop);
+		}
+
+		window.addEventListener('scroll', onScroll);
+
+		return () => window.removeEventListener('scroll', onScroll);
+	}, []);
+
 	return (
 		<>
 			<div className={styles.container} ref={containerRef}>
-				<div className={styles.heading}>
+				<div className={classes(styles.heading, { [styles.withShadow]: hasShadow })}>
 					<div className={styles.fadeAway} />
 					<h2 className={styles.header}>
 						Content + Press
@@ -99,7 +110,7 @@ function ThreadBlocks() {
 											{contenttitle}
 										</h2>
 										<div className={styles.bottomSpacer} />
-										<span className={styles.linksHeader}>Read On:</span>
+										<span className={styles.linksHeader}>Links:</span>
 										<div className={styles.links}>
 											{article && <a className={styles.link} href={article} target="_blank" rel="noopener noreferrer">Article</a>}
 											{twitter && <a className={styles.link} href={twitter} target="_blank" rel="noopener noreferrer">Twitter</a>}

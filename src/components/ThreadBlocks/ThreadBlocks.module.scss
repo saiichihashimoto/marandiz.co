@@ -1,5 +1,12 @@
 @import '../variables.module.scss';
 
+$thread-width: 300px;
+$thread-margin: 40px;
+$double-thread-width: 2 * $thread-width + $thread-margin;
+$triple-thread-width: 3 * $thread-width + 2 * $thread-margin;
+$two-columns-width: $double-thread-width + 2 * $thread-margin;
+$three-columns-width: $triple-thread-width + 2 * $thread-margin;
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -8,12 +15,27 @@
 }
 
 .heading {
-	position: sticky;
 	top: 0;
+	margin-bottom: $thread-margin;
 	background-color: $almost-white;
+
+	@media (min-width: $two-columns-width) {
+		position: sticky;
+	}
+
+	&.withShadow {
+		@media (min-width: $two-columns-width) {
+			box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+		}
+	}
 
 	.fadeAway {
 		position: relative;
+		display: none;
+
+		@media (min-width: $two-columns-width) {
+			display: inherit;
+		}
 
 		&::after {
 			position: absolute;
@@ -30,7 +52,7 @@
 
 .header {
 	composes: header from '../common.module.scss';
-	margin: 30px 0;
+	margin: 60px 0 40px;
 }
 
 .filter,
@@ -66,6 +88,14 @@
 .filters,
 .form {
 	margin-bottom: 30px;
+}
+
+.form {
+	display: none;
+
+	@media (min-width: $two-columns-width) {
+		display: inherit;
+	}
 }
 
 .submit {
@@ -110,13 +140,6 @@
 		}
 	}
 }
-
-$thread-width: 300px;
-$thread-margin: 40px;
-$double-thread-width: 2 * $thread-width + $thread-margin;
-$triple-thread-width: 3 * $thread-width + 2 * $thread-margin;
-$two-columns-width: $double-thread-width + 2 * $thread-margin;
-$three-columns-width: $triple-thread-width + 2 * $thread-margin;
 
 .actions,
 .threads {
