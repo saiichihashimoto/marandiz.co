@@ -18,6 +18,7 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 	top: 0;
 	margin-bottom: $thread-margin;
 	background-color: $almost-white;
+	transition: box-shadow 0.3s ease-in-out;
 
 	@media (min-width: $two-columns-width) {
 		position: sticky;
@@ -73,10 +74,15 @@ $between-filters-margin: 25px;
 	}
 
 	.filter {
-		margin-right: $between-filters-margin;
+		width: 64px;
+		margin-right: auto;
 		font-size: 14px;
 		background-color: $almost-white;
-		outline: none;
+
+		@media (min-width: 292px) {
+			width: $button-min-size;
+			margin-right: $between-filters-margin;
+		}
 
 		@media (min-width: $min-width + 2 * $mobile-margins) {
 			margin-right: 0;
@@ -86,7 +92,8 @@ $between-filters-margin: 25px;
 			margin-right: 0;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
 			padding: 7px 0;
 			color: $maroon;
 			border-width: 2px;
@@ -113,46 +120,29 @@ $between-filters-margin: 25px;
 	}
 }
 
-.submit {
-	composes: link from '../common.module.scss';
-}
-
 .label {
 	font-family: 'PT Sans', sans-serif;
 	color: $gray;
 }
 
 .inputContainer {
-	display: flex;
-	flex-direction: row;
-	min-width: 420px;
 	margin-top: 15px;
+}
 
-	.input {
-		flex-grow: 1;
-		padding: 0 28px;
-		font-size: 16px;
-		background-color: initial;
-		border-color: $maroon;
-		border-style: solid;
-		border-width: 1px 0 1px 1px;
-		outline: none;
-	}
+.input {
+	border-color: $maroon;
+}
 
-	.submit {
-		flex-grow: 0;
-		font-size: 14px;
-		font-weight: 600;
-		color: $almost-white;
-		background-color: $maroon;
-		border-color: $maroon;
-		outline: none;
+.submit {
+	font-size: 14px;
+	color: $almost-white;
+	background-color: $maroon;
+	border-color: $maroon;
 
-		&:hover,
-		&:focus {
-			background-color: $bright-red;
-			border-color: $bright-red;
-		}
+	&:hover,
+	&:focus {
+		background-color: $bright-red;
+		border-color: $bright-red;
 	}
 }
 
@@ -284,7 +274,8 @@ $between-filters-margin: 25px;
 			background-size: cover;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
 			&::after {
 				background-color: $almost-white;
 				background-image: none;

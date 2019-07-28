@@ -26,6 +26,7 @@
 	user-select: none;
 	border-style: solid;
 	border-width: 1px;
+	outline: none;
 }
 
 .redOnWhiteLink {
@@ -33,7 +34,8 @@
 	color: $maroon;
 	border-color: $maroon;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		font-weight: 600;
 		color: $almost-white;
 		background-color: $maroon;

@@ -73,7 +73,8 @@
 	background-color: $orange;
 	border-color: $orange;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: inherit;
 		background-color: $almost-white;
 		border-color: $almost-white;
@@ -85,7 +86,8 @@
 	margin-top: 15px;
 	border-color: $almost-white;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		font-weight: 600;
 		background-color: $maroon;
 		border-color: $maroon;

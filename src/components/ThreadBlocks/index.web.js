@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import classes from 'classnames';
 
+import SubscribeInput from '../SubscribeInput';
+
 import styles from './ThreadBlocks.module.scss';
 
 const { rows } = JSON.parse(document.querySelector('#googleSheets').innerHTML);
@@ -76,13 +78,15 @@ function ThreadBlocks() {
 								Medium
 							</button>
 						</div>
-						<form className={styles.form}>
+						<form className={styles.form} onSubmit={(event) => event.preventDefault()}>
+							{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
 							<label className={styles.label}>
-								Get notifed when new content comes out:
-								<div className={styles.inputContainer}>
-									<input className={styles.input} type="email" placeholder="email" />
-									<button className={styles.submit} type="submit">Subscribe</button>
-								</div>
+								Get notified when new content comes out:
+								<SubscribeInput
+									className={styles.inputContainer}
+									inputClassName={styles.input}
+									submitClassName={styles.submit}
+								/>
 							</label>
 						</form>
 					</div>
