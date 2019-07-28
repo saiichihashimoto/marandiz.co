@@ -39,7 +39,7 @@
     "typeface-squada-one": "0.0.72"
   },
   "devDependencies": {
-    "create-react-node-app": "3.0.25",
+    "create-react-node-app": "3.0.26",
     "cross-env": "5.2.0",
     "eslint-config-saiichihashimoto": "2.0.22",
     "husky": "3.0.1",
