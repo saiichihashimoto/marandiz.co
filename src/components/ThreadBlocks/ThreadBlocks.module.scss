@@ -61,10 +61,14 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 }
 
 .filters {
+	$min-width: 3 * $button-min-size + 50px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	min-width: 3 * $button-min-size + 50px;
+
+	@media (min-width: $min-width + 2 * $mobile-margins) {
+		min-width: $min-width;
+	}
 
 	.filter {
 		font-size: 14px;
