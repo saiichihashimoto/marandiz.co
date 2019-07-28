@@ -21,7 +21,7 @@
 	border-top: 0;
 
 	.header {
-		font-family: 'PT Sans', sans-serif;
+		font-family: $pt-sans;
 		font-size: 24px;
 		font-style: normal;
 		font-weight: normal;
@@ -45,7 +45,7 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 	padding: 50px 70px;
 	margin-bottom: 110px;
 	background-color: $white-boy-white;
-	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+	box-shadow: $box-shadow;
 
 	@media (min-width: $row-width) {
 		width: $offering-width;
@@ -58,7 +58,7 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 
 	.subHeading {
 		margin-bottom: 5px;
-		font-family: 'PT Sans', sans-serif;
+		font-family: $pt-sans;
 		font-size: 13px;
 		font-weight: normal;
 		text-transform: uppercase;
@@ -80,7 +80,7 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 
 	.heading {
 		margin-bottom: 10px;
-		font-family: 'bennet-banner', 'Playfair Display', serif;
+		font-family: $bennet-banner;
 		font-size: 26px;
 		color: $blood-orange;
 		text-transform: capitalize;
@@ -88,7 +88,7 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 
 	.paragraph {
 		margin-bottom: 24px;
-		font-family: 'PT Sans', sans-serif;
+		font-family: $pt-sans;
 		font-size: 16px;
 		font-style: normal;
 		font-weight: normal;

@@ -1,4 +1,5 @@
 /* Colors */
+$almost-black: #1d1b1b;
 $almost-white: #fefbf7;
 $blood-orange: #ff4b3e;
 $bright-red: #f93943;
@@ -7,8 +8,14 @@ $maroon: #ba1f33;
 $orange: #ffb20f;
 $white-boy-white: #ffffff;
 
-/* Global Sizes */
+/* Fonts */
+$bennet-banner: 'bennet-banner', 'Playfair Display', serif;
+$ibm-plex-mono: 'IBM Plex Mono', sans-serif;
+$pt-sans: 'PT Sans', sans-serif;
+
+/* Global */
 $button-min-size: 120px;
+$box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 
 /* Mobile */
 $mobile-margins: 25px;

@@ -1,3 +1,9 @@
+@import '../variables.module.scss';
+
+.app {
+	color: $almost-black;
+}
+
 .triangleBackground {
 	background-image: url('./triangle.png');
 	background-repeat: no-repeat;

@@ -3,11 +3,13 @@
 .container {
 	display: flex;
 	flex-direction: row;
-	min-width: 420px;
+	width: 420px;
+	max-width: 100%;
 }
 
 .input {
 	flex-grow: 1;
+	max-width: calc(100% - #{$button-min-size});
 	padding: 0 28px;
 	font-size: 16px;
 	background-color: transparent;
@@ -19,5 +21,6 @@
 .submit {
 	composes: link from '../common.module.scss';
 	flex-grow: 0;
+	min-width: $button-min-size;
 	font-weight: 600;
 }

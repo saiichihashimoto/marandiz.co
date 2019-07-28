@@ -26,7 +26,7 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 
 	&.withShadow {
 		@media (min-width: $two-columns-width) {
-			box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+			box-shadow: $box-shadow;
 		}
 	}
 
@@ -121,7 +121,7 @@ $between-filters-margin: 25px;
 }
 
 .label {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $pt-sans;
 	color: $gray;
 }
 
@@ -191,7 +191,7 @@ $between-filters-margin: 25px;
 	padding: $padding;
 	margin-bottom: $thread-margin;
 	background-color: $white-boy-white;
-	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+	box-shadow: $box-shadow;
 
 	@media (min-width: $two-columns-width) {
 		width: $thread-width;
@@ -237,7 +237,7 @@ $between-filters-margin: 25px;
 
 	.title {
 		min-height: 2 * $line-height;
-		font-family: 'bennet-banner', 'Playfair Display', serif;
+		font-family: $bennet-banner;
 		font-size: 24px;
 		line-height: $line-height;
 	}

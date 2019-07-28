@@ -19,7 +19,7 @@
 	width: $button-min-size;
 	max-width: 100%;
 	padding: 8px 0;
-	font-family: 'IBM Plex Mono', sans-serif;
+	font-family: $ibm-plex-mono;
 	text-align: center;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -73,7 +73,7 @@
 }
 
 .header {
-	font-family: 'bennet-banner', 'Playfair Display', serif;
+	font-family: $bennet-banner;
 	font-size: 45px;
 	color: $maroon;
 	text-align: center;

@@ -11,7 +11,7 @@ import styles from './App.module.scss';
 
 function App() {
 	return (
-		<>
+		<div className={styles.app}>
 			<Helmet defaultTitle="Marandiz & Co." titleTemplate="%s | Marandiz & Co.">
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -32,7 +32,7 @@ function App() {
 			</div>
 			<ThreadBlocks />
 			<Footer />
-		</>
+		</div>
 	);
 }
 
