@@ -73,9 +73,8 @@
   },
   "reactSnap": {
     "inlineCss": true,
-    "skipThirdPartyRequests": true,
     "viewport": {
-      "width": 1440,
+      "width": 320,
       "height": 821
     }
   }
