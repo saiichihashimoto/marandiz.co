@@ -7,13 +7,7 @@ import styles from './ThreadBlocks.module.scss';
 
 const { rows } = JSON.parse(document.querySelector('#googleSheets').innerHTML);
 
-const unfilteredThreads = rows
-	.map(({ timestamp, image, ...thread }) => ({
-		...thread,
-		image:     image.replace(/^https:\/\/drive\.google\.com\/open\?id=(.*)$/u, 'https://drive.google.com/uc?id=$1'),
-		timestamp: new Date(timestamp),
-	}))
-	.sort((a, b) => b.timestamp - a.timestamp);
+const unfilteredThreads = rows.sort((a, b) => b.timestamp - a.timestamp);
 
 function ThreadBlocks() {
 	const [filter, setFilter] = useState(null);

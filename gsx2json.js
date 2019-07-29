@@ -8,33 +8,42 @@ async function gsx2json() {
 		json: true,
 	});
 
-	const entries = raw.map((row) => Object.entries(row)
-		.map(([key, { $t: value }]) => (
-			key === 'id'
-				? ['gsx$id', value.replace(/^.*\//u, '')]
-				: [key, value]
-		))
-		.filter(([key, value]) => key.startsWith('gsx$') && value !== '')
-		.map(([key, value]) => [key.substr(4), value])
-		.map(([key, value]) => [
-			key,
-			Number.isNaN(Number(value))
-				? value
-				: Number(value),
-		]));
+	const entries = raw.map(({
+		id:            { $t: id },
+		gsx$image:     { $t: image },
+		gsx$timestamp: { $t: timestamp },
+		...row
+	}) => [
+		...Object.entries({
+			id:        id.replace(/^.*\//u, ''),
+			image:     image.replace(/^https:\/\/drive\.google\.com\/open\?id=(.*)$/u, 'https://drive.google.com/uc?id=$1'),
+			timestamp: (new Date(timestamp)).valueOf(),
+		}),
+		...Object.entries(row)
+			.map(([key, { $t: value }]) => [key, value])
+			.filter(([key, value]) => key.startsWith('gsx$') && value !== '')
+			.map(([key, value]) => [key.substr(4), value])
+			.map(([key, value]) => [
+				key,
+				Number.isNaN(Number(value))
+					? value
+					: Number(value),
+			]),
+	]);
 
 	const json = {
-		columns: Object.fromEntries(Object.entries(entries.reduce((acc, entry) => {
-			entry.forEach(([key, value]) => {
-				acc[key] = acc[key] || {};
-				(Array.isArray(value) ? value : [value]).forEach((val) => {
-					acc[key][val] = true;
-				});
-			});
-
-			return acc;
-		}, {}))
-			.map(([key, value]) => [key, Object.keys(value)])),
+		columns2: Object.fromEntries(
+			Object.entries(
+				entries.reduce((acc, entry) => entry.reduce((acc2, [key, value]) => ({
+					...acc2,
+					[key]: {
+						...acc2[key],
+						[value]: true,
+					},
+				}), acc), {})
+			)
+				.map(([key, value]) => [key, Object.keys(value)])
+		),
 		rows: entries.map((row) => Object.fromEntries(row)),
 	};
 
