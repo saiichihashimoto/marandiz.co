@@ -21,45 +21,7 @@ async function gsx2json() {
 		...row,
 	}));
 
-	const imagesRedirected = process.argv.some((arg) => arg === '--local')
-		? rawFixed
-		: await Promise.all(rawFixed.map(async ({
-			gsx$image: { $t: image } = {},
-			...row
-		}) => {
-			if (!image) {
-				return row;
-			}
-
-			let newImage = image;
-
-			try {
-				const { request: { href } } = await request(image, {
-					resolveWithFullResponse: true,
-				});
-
-				newImage = href;
-			} catch (err) {
-				// eslint-disable-next-line no-console
-				console.warn('Couldn\'t redirect the image, using original', err);
-
-				return {
-					...row,
-					gsx$image: { $t: image },
-				};
-			}
-
-			if (newImage.startsWith('https://accounts.google.com/ServiceLogin')) {
-				throw new Error(`${image} needs it's "Link Sharing" settings set to "Public on the web". Images will not work otherwise!`);
-			}
-
-			return {
-				...row,
-				gsx$image: { $t: newImage },
-			};
-		}));
-
-	const entries = imagesRedirected.map(
+	const entries = rawFixed.map(
 		(row) => Object.entries(row)
 			.map(([key, { $t: value }]) => [key, value])
 			.filter(([key, value]) => key.startsWith('gsx$') && value !== '')
