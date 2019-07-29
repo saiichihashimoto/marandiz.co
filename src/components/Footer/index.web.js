@@ -8,10 +8,10 @@ import styles from './Footer.module.scss';
 function Footer() {
 	return (
 		<div className={styles.container}>
-			<div className={styles.getInTouch}>
-				<h2 className={styles.header}>Get in touch</h2>
+			<div className={styles.stayInTouch}>
+				<h2 className={styles.header}>Stay in touch</h2>
 				<p className={styles.text}>
-					Don’t be the last to know. Subscribe to our list and get the latest updates in
+					Don’t be the last to know. Subscribe to our list to get the latest updates on
 					all things DTC.
 				</p>
 				<SubscribeInput

@@ -12,11 +12,17 @@
 }
 
 .navigation {
+	composes: useMobileMargins from '../common.module.scss';
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
-	padding-top: 50px;
+	padding-top: $box-min-padding;
+
+	@media (min-width: $hero-at-max-margins-width) {
+		width: auto;
+		margin: 0 $hero-max-margins;
+	}
 }
 
 .links {
@@ -25,18 +31,14 @@
 	align-items: flex-end;
 }
 
-.navigation,
-.links {
-	composes: useMobileMargins from '../common.module.scss';
-
-	@media (min-width: $hero-at-max-margins-width) {
-		width: auto;
-		margin: 0 $hero-max-margins;
-	}
-}
-
 .spacer {
 	height: 100px;
+}
+
+.title {
+	margin: 0;
+	font-family: $bennet-banner;
+	color: $almost-white;
 }
 
 .header {
@@ -44,20 +46,30 @@
 }
 
 .headerContainer {
+	$bigger-text-width: 544px;
 	composes: box from '../common.module.scss';
 	flex-grow: 1;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: $box-min-padding;
+	padding-bottom: $box-min-padding;
 	border-color: $almost-white;
 	border-style: solid;
 	border-bottom: 0;
 
+	@media (min-width: $bigger-text-width) {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
 	.header {
 		font-family: $bennet-banner;
-		font-size: 42px;
+		font-size: 34px;
 		font-weight: bold;
-		line-height: 54px;
+		line-height: 1.24em;
 		color: $almost-white;
+
+		@media (min-width: $bigger-text-width) {
+			font-size: 42px;
+		}
 	}
 }
 
@@ -92,10 +104,4 @@
 		background-color: $maroon;
 		border-color: $maroon;
 	}
-}
-
-.logo {
-	width: 280px;
-	height: 26px;
-	background-color: #0000ff;
 }

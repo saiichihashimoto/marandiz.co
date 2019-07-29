@@ -179,12 +179,14 @@ $between-filters-margin: 25px;
 
 .thread {
 	$padding: 20px;
+	$title-vertical-padding: 10px;
 	$line-height: 29px;
 	$image-height: 190px;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: space-between;
+	min-height: $image-height + 2 * $line-height + 2 * $padding + 2 * $title-vertical-padding + 34px;
 	padding: $padding;
 	margin-bottom: $thread-margin;
 	background-color: $white-boy-white;
@@ -196,7 +198,6 @@ $between-filters-margin: 25px;
 		&.featured {
 			flex-direction: row;
 			width: $double-thread-width;
-			min-height: $image-height + 2 * $line-height + 2 * $padding + 34px;
 
 			.image {
 				width: $double-thread-width - $thread-width - $padding;
@@ -220,7 +221,7 @@ $between-filters-margin: 25px;
 	.image {
 		width: 100%;
 		min-height: $image-height;
-		object-fit: scale-down;
+		object-fit: contain;
 	}
 
 	.content {
@@ -233,7 +234,9 @@ $between-filters-margin: 25px;
 	}
 
 	.title {
-		min-height: 2 * $line-height;
+		min-height: 2 * $line-height + 2 * $title-vertical-padding;
+		padding-top: $title-vertical-padding;
+		padding-bottom: $title-vertical-padding;
 		font-family: $bennet-banner;
 		font-size: 24px;
 		line-height: $line-height;

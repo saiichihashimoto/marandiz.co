@@ -20,7 +20,7 @@ $padding: 100px;
 	}
 }
 
-.getInTouch,
+.stayInTouch,
 .connect {
 	composes: useMobileMargins from '../common.module.scss';
 	margin-top: 40px;

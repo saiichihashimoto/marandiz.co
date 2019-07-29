@@ -52,9 +52,9 @@ function Offerings() {
 						insights, and advice to drive towards your business objectives.
 					</p>
 					<p className={styles.paragraph}>
-						Our partners can expect two monthly, in-person meetings and an estimated
-						time of 30-35 monthly hours dedicated to your company, along with full
-						digital access to our team.
+						Our partners can expect an estimated 30-35 monthly hours dedicated to your
+						company, along with full digital access to our team, and in-person meetings
+						as needed.
 					</p>
 					<div className={styles.spacer} />
 					<a className={styles.cta} href={`mailto:${email}?subject=Growth Partnership`} target="_blank" rel="noopener noreferrer">Get in Touch</a>
