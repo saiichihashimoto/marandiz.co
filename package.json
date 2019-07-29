@@ -9,12 +9,15 @@
     "type": "git",
     "url": "git+https://github.com/saiichihashimoto/marandiz.co.git"
   },
+  "bin": {
+    "gsx2json": "./gsx2json.js"
+  },
   "scripts": {
     "prebuild": "npm run gsx2json && cat googlesheets.json",
     "build": "cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-node-scripts build --no-node",
     "postbuild": "react-snap",
     "gsx2json": "node -r dotenv/config gsx2json dotenv_config_path=.env.development.local",
-    "prestart": "npm run gsx2json",
+    "prestart": "npm run gsx2json -- --local",
     "start": "cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-node-scripts start --no-node"
   },
   "browserslist": [
