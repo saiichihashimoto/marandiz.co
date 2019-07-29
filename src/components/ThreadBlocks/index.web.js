@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import classes from 'classnames';
 
+import LazyImage from '../LazyImage';
 import SubscribeInput from '../SubscribeInput';
 
 import styles from './ThreadBlocks.module.scss';
@@ -89,7 +90,7 @@ function ThreadBlocks() {
 							key={id}
 							className={classes(styles.thread, { [styles.featured]: !index })}
 						>
-							<img className={styles.image} src={image} alt={contenttitle} />
+							<LazyImage className={styles.image} src={image} alt={contenttitle} />
 							<div className={styles.content}>
 								<div className={styles.topSpacer} />
 								<h2 className={styles.title}>
