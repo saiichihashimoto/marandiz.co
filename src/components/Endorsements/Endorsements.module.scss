@@ -1,29 +1,29 @@
-.endorsements {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	width: 100%;
+.header {
+	composes: header from '../common.module.scss';
+	margin-bottom: 70px;
+}
 
-	@media (max-width: 800px) {
-		align-items: center;
-		flex-direction: column;
+.endorsements {
+	composes: useMobileMargins from '../common.module.scss';
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	@media (min-width: 800px) {
+		flex-direction: row;
+		align-items: stretch;
+		width: auto;
 	}
 }
 
 .endorsement {
-	height: 50px;
-	width: 150px;
+	height: 100px;
+	margin-bottom: 60px;
+	object-fit: contain;
 
 	&.buffer {
-		background: #f00;
-	}
-
-	&.instagram {
-		background: #0f0;
-	}
-
-	&.facebook {
-		background: #00f;
+		padding: 25px 0;
 	}
 }

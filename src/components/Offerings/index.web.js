@@ -1,52 +1,64 @@
 import React from 'react';
 
+import { email } from '../constants';
+
 import styles from './Offerings.module.scss';
 
 function Offerings() {
 	return (
-		<div className={styles.offerings}>
-			<div className={styles.offering}>
-				<h3 className={styles.subHeading}>Assessment</h3>
-				<h2 className={styles.heading}>Brand Teardown</h2>
-				<p className={styles.paragraph}>
-					Deliverable is a document outlining strengths and weaknesses of the brand,
-					where changes can be made, and actionable insights for the team to execute on.
-				</p>
-				<p className={styles.paragraph}>
-					Document also includes proposal of areas where Petri Growth can help as a long
-					term growth partner. Also includes a conference call to discuss
-					findings/learnings/opportunities.
-				</p>
-				<div className={styles.spacer} />
-				<a className={styles.button} href="http://google.com" target="_blank" rel="noopener noreferrer">Book Now | <b>$1500</b></a>
+		<div className={styles.container}>
+			<div className={styles.headerContainer}>
+				<h2 className={styles.header}>
+					With roots in tech and digital product, we elevate brands and experiences
+					through active advising and coherent customer focused strategies.
+				</h2>
 			</div>
-			<div className={styles.offering}>
-				<h3 className={styles.subHeading}>Advising</h3>
-				<h2 className={styles.heading}>Strategy Sessions</h2>
-				<p className={styles.paragraph}>
-					4-hour call with me and a partner to problem solve operational and strategic
-					issues for the company.
-				</p>
-				<p className={styles.paragraph}>
-					Bring any issue and we'll work with you during this period to re-orient them
-					on the right path.
-				</p>
-				<div className={styles.spacer} />
-				<a className={styles.button} href="http://google.com" target="_blank" rel="noopener noreferrer">Book Now | <b>$1500</b></a>
-			</div>
-			<div className={styles.offering}>
-				<h3 className={styles.subHeading}>Strategy & ops</h3>
-				<h2 className={styles.heading}>Growth Partnerships</h2>
-				<p className={styles.paragraph}>
-					Retainer engagement (3mo min) where Petri Growth operates as a part time growth
-					lead, helping to drive strategic and operational initiatives.
-				</p>
-				<p className={styles.paragraph}>
-					Areas of high leverage for Petri: UX/UI/eCom/email iteration & experimentation,
-					Messaging/Position/Content Strategy, Growth/Product/Launch strategy.
-				</p>
-				<div className={styles.spacer} />
-				<a className={styles.button} href="http://google.com" target="_blank" rel="noopener noreferrer">Book Now | <b>$1500</b></a>
+			<div className={styles.offerings}>
+				<div className={styles.offering}>
+					<h3 className={styles.subHeading}>
+						Unblock Your Company
+					</h3>
+					<h2 className={styles.heading}>
+						Strategy Sessions
+					</h2>
+					<p className={styles.paragraph}>
+						You’ve got problems, and we like problem solving. Whether starting on a new
+						project or scaling existing offerings, this 4-hour meeting aims to generate
+						valuable solutions and insights while taking into account team size and
+						capabilities.
+					</p>
+					<p className={styles.paragraph}>
+						Get confidence that your next steps are thoughtfully inspected and ready for
+						action. We’ll follow up with a short summary and relevant action items.
+					</p>
+					<p className={styles.paragraph}>
+						After signing up, we will reach out within one business day to schedule our
+						conversation.
+					</p>
+					<div className={styles.spacer} />
+					<a className={styles.cta} href={`mailto:${email}?subject=Strategy Session`} target="_blank" rel="noopener noreferrer">Get Started</a>
+				</div>
+				<div className={styles.offering}>
+					<h3 className={styles.subHeading}>
+						DTC Strategy
+					</h3>
+					<h2 className={styles.heading}>
+						Growth Partnerships
+					</h2>
+					<p className={styles.paragraph}>
+						Coupling our experience with industry specific research, we identify
+						leverage points for your brand, product, and marketing, advising you on the
+						best next steps. We work with you over  a six month period, providing data,
+						insights, and advice to drive towards your business objectives.
+					</p>
+					<p className={styles.paragraph}>
+						Our partners can expect an estimated 30-35 monthly hours dedicated to your
+						company, along with full digital access to our team, and in-person meetings
+						as needed.
+					</p>
+					<div className={styles.spacer} />
+					<a className={styles.cta} href={`mailto:${email}?subject=Growth Partnership`} target="_blank" rel="noopener noreferrer">Get in Touch</a>
+				</div>
 			</div>
 		</div>
 	);

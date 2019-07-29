@@ -1,0 +1,89 @@
+@import '../variables.module.scss';
+
+$row-width: 1000px;
+$padding: 100px;
+
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	color: $almost-white;
+	background-image: url('./gradient.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+
+	@media (min-width: $row-width) {
+		flex-direction: row;
+		padding: $padding;
+	}
+}
+
+.stayInTouch,
+.connect {
+	composes: useMobileMargins from '../common.module.scss';
+	margin-top: 40px;
+	margin-bottom: 40px;
+
+	@media (min-width: $row-width) {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+.connect {
+	@media (min-width: $row-width) {
+		width: 350px;
+		margin-left: 50px;
+	}
+}
+
+.header,
+.text,
+.link {
+	margin-bottom: 20px;
+}
+
+.header {
+	font-family: $bennet-banner;
+	font-size: 45px;
+}
+
+.text {
+	font-family: $pt-sans;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+.link {
+	display: block;
+	font-family: $pt-sans;
+	font-size: 16px;
+}
+
+.inputContainer {
+	box-shadow: $box-shadow;
+}
+
+.input {
+	border-color: $almost-white;
+
+	&::placeholder {
+		color: rgba(255, 255, 255, 0.5);
+	}
+}
+
+.submit {
+	font-size: 14px;
+	color: $almost-black;
+	background-color: $almost-white;
+	border-color: $almost-white;
+
+	&:hover,
+	&:focus {
+		color: $almost-white;
+		background-color: $maroon;
+		border-color: $maroon;
+	}
+}

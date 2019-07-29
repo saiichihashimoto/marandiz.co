@@ -1,0 +1,81 @@
+@import './variables.module.scss';
+
+/*
+ * Use mobile margins until a threshold, then fix the width and center the content
+ *
+ * Responsibility of composer to control width & margins at next breakpoint
+ */
+
+.useMobileMargins {
+	margin: 0 $mobile-margins;
+
+	@media (min-width: $mobile-content-threshold + 2 * $mobile-margins) {
+		width: $mobile-content-threshold;
+		margin: 0 auto;
+	}
+}
+
+.link {
+	width: $button-min-size;
+	max-width: 100%;
+	padding: 8px 0;
+	font-family: $ibm-plex-mono;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: pointer;
+	user-select: none;
+	border-style: solid;
+	border-width: 1px;
+	outline: none;
+}
+
+.redOnWhiteLink {
+	composes: link;
+	color: $maroon;
+	border-color: $maroon;
+
+	&:hover,
+	&:focus {
+		font-weight: 600;
+		color: $almost-white;
+		background-color: $maroon;
+	}
+}
+
+.box {
+	composes: useMobileMargins;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: $box-max-size;
+	padding-right: $box-min-padding;
+	padding-left: $box-min-padding;
+	border-width: 2px;
+
+	@media (min-width: $hero-at-max-margins-width) {
+		width: auto;
+		margin: 0 $hero-max-margins;
+	}
+
+	.boxContents {
+		margin: 0;
+
+		@media (min-width: $hero-at-max-margins-width) {
+			width: $mobile-content-threshold - 2 * $box-min-padding - 4px;
+			margin: 0 auto;
+		}
+
+		@media (min-width: $hero-at-max-margins-width + 2 * $box-max-padding - 2 * $box-min-padding) {
+			width: auto;
+			margin: 0 $box-max-padding - $box-min-padding;
+		}
+	}
+}
+
+.header {
+	font-family: $bennet-banner;
+	font-size: 45px;
+	color: $maroon;
+	text-align: center;
+	letter-spacing: 0.035em;
+}

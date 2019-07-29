@@ -1,0 +1,31 @@
+/* Colors */
+$almost-black: #1d1b1b;
+$almost-white: #fefbf7;
+$blood-orange: #ff4b3e;
+$bright-red: #f93943;
+$gray: #828282;
+$maroon: #ba1f33;
+$orange: #ffb20f;
+$white-boy-white: #ffffff;
+
+/* Fonts */
+$bennet-banner: 'bennet-banner', 'Playfair Display', serif;
+$ibm-plex-mono: 'IBM Plex Mono', sans-serif;
+$pt-sans: 'PT Sans', sans-serif;
+
+/* Global */
+$button-min-size: 120px;
+$box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+
+/* Mobile */
+$mobile-margins: 25px;
+$mobile-content-threshold: 550px;
+
+/* Box */
+$box-max-size: 750px;
+$box-min-padding: 20px;
+$box-max-padding: 80px;
+
+/* Hero Sizes */
+$hero-max-margins: 100px;
+$hero-at-max-margins-width: $mobile-content-threshold + 2 * $hero-max-margins;

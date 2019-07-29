@@ -10,7 +10,7 @@ const mount = rootElement.hasChildNodes() ? hydrate : render;
 
 mount(
 	<App />,
-	rootElement,
+	rootElement
 );
 
 if (process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID) {

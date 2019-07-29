@@ -1,24 +1,317 @@
-.thread {
-	background: #f00;
-	border-radius: 12px;
-	display: block;
-	padding: 12px;
+@import '../variables.module.scss';
 
-	&Container {
-		padding: 14px 12px;
+$thread-width: 300px;
+$thread-margin: 40px;
+$double-thread-width: 2 * $thread-width + $thread-margin;
+$triple-thread-width: 3 * $thread-width + 2 * $thread-margin;
+$two-columns-width: $double-thread-width + 2 * $thread-margin;
+$three-columns-width: $triple-thread-width + 2 * $thread-margin;
+
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: $almost-white;
+}
+
+.heading {
+	top: 0;
+	margin-bottom: $thread-margin;
+	background-color: $almost-white;
+	transition: box-shadow 0.3s ease-in-out;
+
+	@media (min-width: $two-columns-width) {
+		position: sticky;
+	}
+
+	&.withShadow {
+		@media (min-width: $two-columns-width) {
+			box-shadow: $box-shadow;
+		}
+	}
+
+	.fadeAway {
+		position: relative;
+		display: none;
+
+		@media (min-width: $two-columns-width) {
+			display: inherit;
+		}
+
+		&::after {
+			position: absolute;
+			right: 0;
+			bottom: -100vh;
+			left: 0;
+			height: 125px;
+			pointer-events: none;
+			content: '';
+			background: linear-gradient(to top, $white-boy-white 6.25%, rgba(255, 255, 255, 0) 100%);
+		}
 	}
 }
 
-.tag {
-	border: 1px solid #000;
-	border-radius: 12px;
-	cursor: pointer;
-	display: inline-block;
-	margin: 2px;
-	padding: 4px;
-	user-select: none;
+.header {
+	composes: header from '../common.module.scss';
+	margin: 60px 0 40px;
+}
 
-	&.selected {
-		background: #0f0;
+.filter,
+.link {
+	composes: redOnWhiteLink from '../common.module.scss';
+}
+
+$between-filters-margin: 25px;
+
+.filters {
+	$max-width: 3 * $button-min-size + 2 * $between-filters-margin;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	@media (min-width: $max-width + 2 * $mobile-margins) {
+		width: $max-width;
+	}
+
+	.filter {
+		width: 64px;
+		margin-right: auto;
+		font-size: 14px;
+		background-color: $almost-white;
+
+		@media (min-width: 292px) {
+			width: $button-min-size;
+			margin-right: $between-filters-margin;
+		}
+
+		@media (min-width: $max-width + 2 * $mobile-margins) {
+			margin-right: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:hover,
+		&:focus {
+			padding: 7px 0;
+			color: $maroon;
+			border-width: 2px;
+		}
+
+		&.selected {
+			font-weight: 600;
+			color: $almost-white;
+			background-color: $maroon;
+		}
+	}
+}
+
+.filters,
+.label {
+	margin-bottom: 30px;
+}
+
+.label {
+	display: none;
+	font-family: $pt-sans;
+	color: $gray;
+
+	@media (min-width: $two-columns-width) {
+		display: block;
+	}
+}
+
+.inputContainer {
+	margin-top: 15px;
+}
+
+.input {
+	border-color: $maroon;
+}
+
+.submit {
+	font-size: 14px;
+	color: $almost-white;
+	background-color: $maroon;
+	border-color: $maroon;
+
+	&:hover,
+	&:focus {
+		background-color: $bright-red;
+		border-color: $bright-red;
+	}
+}
+
+.actions,
+.threads {
+	composes: useMobileMargins from '../common.module.scss';
+	display: flex;
+
+	@media (min-width: $two-columns-width) {
+		width: $double-thread-width;
+		max-width: none;
+	}
+
+	@media (min-width: $three-columns-width) {
+		width: $triple-thread-width;
+	}
+}
+
+.actions {
+	flex-direction: column;
+	justify-content: space-between;
+
+	@media (min-width: $three-columns-width) {
+		flex-direction: row;
+		align-items: flex-end;
+	}
+}
+
+.threads {
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	.spacer {
+		width: $thread-width;
+	}
+}
+
+.thread {
+	$padding: 20px;
+	$title-vertical-padding: 10px;
+	$line-height: 29px;
+	$image-height: 190px;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+	min-height: $image-height + 2 * $line-height + 2 * $padding + 2 * $title-vertical-padding + 34px;
+	padding: $padding;
+	margin-bottom: $thread-margin;
+	background-color: $white-boy-white;
+	box-shadow: $box-shadow;
+
+	@media (min-width: $two-columns-width) {
+		width: $thread-width;
+
+		&.featured {
+			flex-direction: row;
+			width: $double-thread-width;
+
+			.image {
+				width: $double-thread-width - $thread-width - $padding;
+				object-fit: cover;
+			}
+
+			.content {
+				width: $thread-width - 2 * $padding;
+			}
+
+			.bottomSpacer {
+				flex-grow: 1;
+			}
+
+			.linksHeader {
+				display: initial;
+			}
+		}
+	}
+
+	.image {
+		width: 100%;
+		min-height: $image-height;
+		object-fit: contain;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.topSpacer {
+		flex-grow: 1;
+	}
+
+	.title {
+		min-height: 2 * $line-height + 2 * $title-vertical-padding;
+		padding-top: $title-vertical-padding;
+		padding-bottom: $title-vertical-padding;
+		font-family: $bennet-banner;
+		font-size: 24px;
+		line-height: $line-height;
+	}
+
+	.linksHeader {
+		display: none;
+		font-family: 'PT Sans', sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 21px;
+		color: $gray;
+		text-transform: uppercase;
+	}
+
+	.link {
+		margin-right: $between-filters-margin;
+		font-size: 14px;
+
+		@media (min-width: $two-columns-width) {
+			&:only-child {
+				margin-left: auto;
+			}
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&::after {
+			display: inline-block;
+			width: 1.5em;
+			height: 0.7em;
+			margin-left: 5px;
+			content: '';
+			background-image: url('./arrow.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+
+		&:hover,
+		&:focus {
+			&::after {
+				background-color: $almost-white;
+				background-image: none;
+				mask-image: url('./arrow.svg');
+				mask-position: center;
+				mask-repeat: no-repeat;
+				mask-size: cover;
+			}
+		}
+
+		&:first-child {
+			&:nth-last-child(3) {
+				&,
+				~ .link {
+					width: 72px;
+
+					&::after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.links {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		@media (min-width: $two-columns-width) {
+			justify-content: space-between;
+		}
 	}
 }

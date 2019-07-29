@@ -1,26 +1,107 @@
-.header {
-	padding: 50px 0;
-	width: 100%;
+@import '../variables.module.scss';
 
-	.logo {
-		background-color: #f00;
-		content: ' ';
-		height: 150px;
-		margin: 0 auto;
-		width: 100px;
+.hero {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: $maroon;
+	background-image: url('./gradient.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+}
+
+.navigation {
+	composes: useMobileMargins from '../common.module.scss';
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-top: $box-min-padding;
+
+	@media (min-width: $hero-at-max-margins-width) {
+		width: auto;
+		margin: 0 $hero-max-margins;
 	}
 }
 
-.description {
-	display: block;
-	margin: 30px 30px 0 auto;
-	text-transform: lowercase;
-	width: 210px;
+.links {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }
 
-.bodyBackground {
-	background-image: url('./blob.png');
-	background-position: top;
-	background-repeat: no-repeat;
-	background-size: 100% contain;
+.spacer {
+	height: 100px;
+}
+
+.title {
+	margin: 0;
+	font-family: $bennet-banner;
+	color: $almost-white;
+}
+
+.header {
+	composes: boxContents from '../common.module.scss';
+}
+
+.headerContainer {
+	$bigger-text-width: 544px;
+	composes: box from '../common.module.scss';
+	flex-grow: 1;
+	padding-top: $box-min-padding;
+	padding-bottom: $box-min-padding;
+	border-color: $almost-white;
+	border-style: solid;
+	border-bottom: 0;
+
+	@media (min-width: $bigger-text-width) {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	.header {
+		font-family: $bennet-banner;
+		font-size: 34px;
+		font-weight: bold;
+		line-height: 1.24em;
+		color: $almost-white;
+
+		@media (min-width: $bigger-text-width) {
+			font-size: 42px;
+		}
+	}
+}
+
+.cta,
+.link {
+	font-size: 14px;
+	color: $almost-white;
+}
+
+.cta {
+	composes: link from '../common.module.scss';
+	font-weight: 600;
+	background-color: $orange;
+	border-color: $orange;
+
+	&:hover,
+	&:focus {
+		color: inherit;
+		background-color: $almost-white;
+		border-color: $almost-white;
+	}
+}
+
+.link {
+	composes: link from '../common.module.scss';
+	margin-top: 15px;
+	border-color: $almost-white;
+
+	&:hover,
+	&:focus {
+		font-weight: 600;
+		background-color: $maroon;
+		border-color: $maroon;
+	}
 }
