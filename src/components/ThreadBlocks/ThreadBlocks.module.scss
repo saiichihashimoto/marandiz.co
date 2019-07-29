@@ -186,6 +186,7 @@ $between-filters-margin: 25px;
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: space-between;
+	width: 100%;
 	min-height: $image-height + 2 * $line-height + 2 * $padding + 2 * $title-vertical-padding + 34px;
 	padding: $padding;
 	margin-bottom: $thread-margin;
