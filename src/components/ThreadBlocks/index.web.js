@@ -84,38 +84,27 @@ function ThreadBlocks() {
 					</div>
 				</div>
 				<div className={styles.threads}>
-					{
-						(new Array(8))
-							.fill(null)
-							.map((val, i) => threads.map(({
-								id,
-								image,
-								contenttitle,
-								article,
-								twitter,
-								medium,
-							}) => (
-								<div
-									key={id}
-									className={classes(styles.thread, !i && styles.featured)}
-								>
-									<img className={styles.image} src={image} alt={contenttitle} />
-									<div className={styles.content}>
-										<div className={styles.topSpacer} />
-										<h2 className={styles.title}>
-											{contenttitle}
-										</h2>
-										<div className={styles.bottomSpacer} />
-										<span className={styles.linksHeader}>Links:</span>
-										<div className={styles.links}>
-											{article && <a className={styles.link} href={article} target="_blank" rel="noopener noreferrer">Article</a>}
-											{twitter && <a className={styles.link} href={twitter} target="_blank" rel="noopener noreferrer">Twitter</a>}
-											{medium && <a className={styles.link} href={medium} target="_blank" rel="noopener noreferrer">Medium</a>}
-										</div>
-									</div>
+					{threads.map(({ id, image, contenttitle, article, twitter, medium }, index) => (
+						<div
+							key={id}
+							className={classes(styles.thread, { [styles.featured]: !index })}
+						>
+							<img className={styles.image} src={image} alt={contenttitle} />
+							<div className={styles.content}>
+								<div className={styles.topSpacer} />
+								<h2 className={styles.title}>
+									{contenttitle}
+								</h2>
+								<div className={styles.bottomSpacer} />
+								<span className={styles.linksHeader}>Links:</span>
+								<div className={styles.links}>
+									{article && <a className={styles.link} href={article} target="_blank" rel="noopener noreferrer">Article</a>}
+									{twitter && <a className={styles.link} href={twitter} target="_blank" rel="noopener noreferrer">Twitter</a>}
+									{medium && <a className={styles.link} href={medium} target="_blank" rel="noopener noreferrer">Medium</a>}
 								</div>
-							)))
-					}
+							</div>
+						</div>
+					))}
 					<div className={styles.spacer} />
 				</div>
 			</div>
