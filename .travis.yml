@@ -11,7 +11,7 @@ notifications:
     on_success: never
     on_failure: always
 script:
-  - npm run build && npx lint-my-app lint
+  - npm run build
 jobs:
   include:
     - stage: test
