@@ -6,6 +6,8 @@ $double-thread-width: 2 * $thread-width + $thread-margin;
 $triple-thread-width: 3 * $thread-width + 2 * $thread-margin;
 $two-columns-width: $double-thread-width + 2 * $thread-margin;
 $three-columns-width: $triple-thread-width + 2 * $thread-margin;
+$two-column-sticky-height: 730px;
+$three-column-sticky-height: 675px;
 
 .container {
 	display: flex;
@@ -20,23 +22,23 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 	background-color: $almost-white;
 	transition: box-shadow 0.3s ease-in-out;
 
-	@media (min-width: $two-columns-width) {
+	@media
+		(min-width: $two-columns-width) and (min-height: $two-column-sticky-height),
+		(min-width: $three-columns-width) and (min-height: $three-column-sticky-height) {
 		position: sticky;
-	}
 
-	&.withShadow {
-		@media (min-width: $two-columns-width) {
+		&.withShadow {
 			box-shadow: $box-shadow;
+		}
+
+		.fadeAway {
+			display: inherit;
 		}
 	}
 
 	.fadeAway {
 		position: relative;
 		display: none;
-
-		@media (min-width: $two-columns-width) {
-			display: inherit;
-		}
 
 		&::after {
 			position: absolute;
