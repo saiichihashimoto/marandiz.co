@@ -64,13 +64,13 @@ $three-columns-width: $triple-thread-width + 2 * $thread-margin;
 $between-filters-margin: 25px;
 
 .filters {
-	$min-width: 3 * $button-min-size + 2 * $between-filters-margin;
+	$max-width: 3 * $button-min-size + 2 * $between-filters-margin;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 
-	@media (min-width: $min-width + 2 * $mobile-margins) {
-		min-width: $min-width;
+	@media (min-width: $max-width + 2 * $mobile-margins) {
+		width: $max-width;
 	}
 
 	.filter {
@@ -84,7 +84,7 @@ $between-filters-margin: 25px;
 			margin-right: $between-filters-margin;
 		}
 
-		@media (min-width: $min-width + 2 * $mobile-margins) {
+		@media (min-width: $max-width + 2 * $mobile-margins) {
 			margin-right: 0;
 		}
 
