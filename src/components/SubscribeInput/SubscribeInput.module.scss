@@ -1,6 +1,6 @@
 @import '../variables.module.scss';
 
-.container {
+.form {
 	display: flex;
 	flex-direction: row;
 	width: 420px;
@@ -23,4 +23,27 @@
 	flex-grow: 0;
 	min-width: $button-min-size;
 	font-weight: 600;
+}
+
+.success {
+	composes: link from '../common.module.scss';
+	width: 100%;
+	padding: 9px 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: $almost-white;
+	cursor: initial;
+	background-color: $bright-red;
+	border-color: $bright-red;
+
+	&::before {
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		margin-right: 1em;
+		margin-bottom: -0.125em;
+		content: '';
+		background-image: url('./checkmark.svg');
+		background-repeat: no-repeat;
+	}
 }

@@ -108,21 +108,18 @@ $between-filters-margin: 25px;
 }
 
 .filters,
-.form {
+.label {
 	margin-bottom: 30px;
 }
 
-.form {
-	display: none;
-
-	@media (min-width: $two-columns-width) {
-		display: inherit;
-	}
-}
-
 .label {
+	display: none;
 	font-family: $pt-sans;
 	color: $gray;
+
+	@media (min-width: $two-columns-width) {
+		display: block;
+	}
 }
 
 .inputContainer {

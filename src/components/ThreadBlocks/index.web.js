@@ -78,17 +78,15 @@ function ThreadBlocks() {
 								Medium
 							</button>
 						</div>
-						<form className={styles.form} onSubmit={(event) => event.preventDefault()}>
-							{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-							<label className={styles.label}>
-								Get notified when new content comes out:
-								<SubscribeInput
-									className={styles.inputContainer}
-									inputClassName={styles.input}
-									submitClassName={styles.submit}
-								/>
-							</label>
-						</form>
+						{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+						<label className={styles.label}>
+							Get notified when new content comes out:
+							<SubscribeInput
+								className={styles.inputContainer}
+								inputClassName={styles.input}
+								submitClassName={styles.submit}
+							/>
+						</label>
 					</div>
 				</div>
 				<div className={styles.threads}>
