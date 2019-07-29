@@ -17,7 +17,7 @@
     "build": "cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-node-scripts build --no-node",
     "postbuild": "react-snap",
     "gsx2json": "node -r dotenv/config gsx2json dotenv_config_path=.env.development.local",
-    "prestart": "npm run gsx2json -- --local",
+    "prestart": "npm run gsx2json",
     "start": "cross-env REACT_APP_GOOGLE_SHEETS=\"$(cat googlesheets.json)\" react-node-scripts start --no-node"
   },
   "browserslist": [
