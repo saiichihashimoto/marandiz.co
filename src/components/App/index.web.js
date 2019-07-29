@@ -33,8 +33,6 @@ function App() {
 
 				<meta name="twitter:site" content={`@${twitterHandle}`} />
 				<meta name="twitter:creator" content={`@${twitterHandle}`} />
-
-				<link rel="stylesheet" href="https://use.typekit.net/mhv2apy.css" />
 			</Helmet>
 			<Header />
 			<div className={styles.triangleBackground}>

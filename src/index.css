@@ -2,6 +2,8 @@
 /* stylelint-disable selector-max-universal */
 @import-normalize;
 
+@import 'https://use.typekit.net/mhv2apy.css';
+
 @import '~typeface-ibm-plex-mono';
 
 @import '~typeface-pt-sans';
