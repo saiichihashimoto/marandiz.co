@@ -30,22 +30,26 @@
 }
 
 $offering-width: 500px;
+$offering-min-padding: 20px;
+$offering-max-padding: 70px;
 $offering-margins: 100px;
-$row-width: 2 * $offering-width + 3 * $offering-margins;
+$between-paddings: $offering-max-padding - $offering-min-padding;
+$column-start-growing-width: $offering-width + 2 * $mobile-margins - 2 * $between-paddings;
+$row-width: 2 * $offering-width + 3 * $mobile-margins - 4 * $between-paddings;
+$row-margins-start-growing-width: 2 * $offering-width + 3 * $mobile-margins;
+$row-margins-stop-growing-width: 2 * $offering-width + 3 * $offering-margins;
 
 .cta {
 	composes: redOnWhiteLink from '../common.module.scss';
 }
 
 .offering {
-	$min-padding: 20px;
-	$max-padding: 70px;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
 	width: 100%;
 	max-width: $offering-width;
-	padding: 50px $min-padding;
+	padding: 50px $offering-min-padding;
 	margin-right: auto;
 	margin-bottom: 110px;
 	margin-left: auto;
@@ -53,27 +57,30 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 	box-shadow: $box-shadow;
 
 	@media (min-width: $row-width) {
-		margin-right: $offering-margins;
+		margin-right: $mobile-margins;
 		margin-left: 0;
 
 		&:last-child {
 			margin-right: 0;
-			margin-left: 0;
 		}
+	}
+
+	@media (min-width: $row-margins-start-growing-width) {
+		margin-right: 0;
+	}
+
+	@media (min-width: $row-margins-stop-growing-width) {
+		margin-right: $offering-margins;
 	}
 
 	.subHeading,
 	.heading,
 	.paragraph,
 	.cta {
-		@media (min-width: $offering-width + 2 * $mobile-margins - 2 * $max-padding + 2 * $min-padding) {
+		@media (min-width: $column-start-growing-width) {
 			width: 100%;
-			max-width: $offering-width - 2 * $max-padding;
+			max-width: $offering-width - 2 * $offering-max-padding;
 			margin: 0 auto;
-		}
-
-		@media (min-width: $offering-width + 2 * $mobile-margins) {
-			margin: 0 $max-padding - $min-padding;
 		}
 	}
 
@@ -140,5 +147,16 @@ $row-width: 2 * $offering-width + 3 * $offering-margins;
 	@media (min-width: $row-width) {
 		flex-direction: row;
 		width: auto;
+		margin: 0 $mobile-margins;
+	}
+
+	@media (min-width: $row-margins-start-growing-width) {
+		justify-content: space-evenly;
+		margin: 0;
+	}
+
+	@media (min-width: $row-margins-stop-growing-width) {
+		justify-content: center;
+		margin: 0 auto;
 	}
 }
