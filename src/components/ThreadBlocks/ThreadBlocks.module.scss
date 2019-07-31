@@ -30,15 +30,17 @@ $three-column-sticky-height: 675px;
 		&.withShadow {
 			box-shadow: $box-shadow;
 		}
-
-		.fadeAway {
-			display: inherit;
-		}
 	}
 
 	.fadeAway {
 		position: relative;
 		display: none;
+
+		@media
+			(min-width: $two-columns-width) and (min-height: $two-column-sticky-height),
+			(min-width: $three-columns-width) and (min-height: $three-column-sticky-height) {
+			display: inherit;
+		}
 
 		&::after {
 			position: absolute;
