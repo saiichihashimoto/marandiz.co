@@ -52,7 +52,7 @@
     "eslint-config-saiichihashimoto": "2.0.23",
     "eslint-plugin-css-modules": "2.11.0",
     "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-jest": "22.14.1",
+    "eslint-plugin-jest": "22.15.0",
     "eslint-plugin-jest-formatting": "0.1.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-node": "9.1.0",
