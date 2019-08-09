@@ -49,7 +49,7 @@
     "cross-env": "5.2.0",
     "dotenv": "8.0.0",
     "eslint": "6.1.0",
-    "eslint-config-saiichihashimoto": "2.0.25",
+    "eslint-config-saiichihashimoto": "2.0.26",
     "eslint-plugin-css-modules": "2.11.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jest": "22.15.0",
