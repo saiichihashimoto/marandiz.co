@@ -62,7 +62,7 @@
     "eslint-plugin-unicorn": "10.0.0",
     "eslint-plugin-you-dont-need-lodash-underscore": "6.6.0",
     "eslint-plugin-you-dont-need-momentjs": "1.5.0",
-    "husky": "3.0.3",
+    "husky": "3.0.4",
     "lint-my-app": "3.7.6",
     "node-sass": "4.12.0",
     "react-snap": "1.23.0",
