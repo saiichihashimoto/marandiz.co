@@ -66,7 +66,7 @@
     "lint-my-app": "3.7.9",
     "node-sass": "4.12.0",
     "react-snap": "1.23.0",
-    "stylelint-config-saiichihashimoto": "2.0.7"
+    "stylelint-config-saiichihashimoto": "2.0.8"
   },
   "engines": {
     "node": "12.8.0"
