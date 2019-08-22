@@ -48,7 +48,7 @@
     "create-react-node-app": "3.0.30",
     "cross-env": "5.2.0",
     "dotenv": "8.1.0",
-    "eslint": "6.2.0",
+    "eslint": "6.2.1",
     "eslint-config-saiichihashimoto": "2.0.31",
     "eslint-plugin-css-modules": "2.11.0",
     "eslint-plugin-import": "2.18.2",
