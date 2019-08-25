@@ -13,7 +13,7 @@ function LazyImage({ src, srcSet, alt, ...props }) {
 
 	useEffect(() => {
 		if (supportsLazyLoading || !supportsIntersectionObserver) {
-			return null;
+			return () => {};
 		}
 
 		const { current } = ref;
