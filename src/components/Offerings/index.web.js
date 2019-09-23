@@ -13,8 +13,8 @@ function Offerings() {
 					through active advising and coherent customer focused strategies.
 				</h2>
 			</div>
-		{/*<div className={styles.offerings}>
-				<div className={styles.offering}>
+			<div className={styles.offerings}>
+		{/*<div className={styles.offering}>
 					<h3 className={styles.subHeading}>
 						Unblock Your Company
 					</h3>
