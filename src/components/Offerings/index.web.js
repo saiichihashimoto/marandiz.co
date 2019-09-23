@@ -13,31 +13,31 @@ function Offerings() {
 					through active advising and coherent customer focused strategies.
 				</h2>
 			</div>
-			<div className={styles.offerings}>
-// 				<div className={styles.offering}>
-// 					<h3 className={styles.subHeading}>
-// 						Unblock Your Company
-// 					</h3>
-// 					<h2 className={styles.heading}>
-// 						Strategy Sessions
-// 					</h2>
-// 					<p className={styles.paragraph}>
-// 						You’ve got problems, and we like problem solving. Whether starting on a new
-// 						project or scaling existing offerings, this 4-hour meeting aims to generate
-// 						valuable solutions and insights while taking into account team size and
-// 						capabilities.
-// 					</p>
-// 					<p className={styles.paragraph}>
-// 						Get confidence that your next steps are thoughtfully inspected and ready for
-// 						action. We’ll follow up with a short summary and relevant action items.
-// 					</p>
-// 					<p className={styles.paragraph}>
-// 						After signing up, we will reach out within one business day to schedule our
-// 						conversation.
-// 					</p>
-// 					<div className={styles.spacer} />
-// 					<a className={styles.cta} href={`mailto:${email}?subject=Strategy Session`} target="_blank" rel="noopener noreferrer">Get Started</a>
-// 				</div>
+		{/*<div className={styles.offerings}>
+				<div className={styles.offering}>
+					<h3 className={styles.subHeading}>
+						Unblock Your Company
+					</h3>
+					<h2 className={styles.heading}>
+						Strategy Sessions
+					</h2>
+					<p className={styles.paragraph}>
+						You’ve got problems, and we like problem solving. Whether starting on a new
+						project or scaling existing offerings, this 4-hour meeting aims to generate
+						valuable solutions and insights while taking into account team size and
+						capabilities.
+					</p>
+					<p className={styles.paragraph}>
+						Get confidence that your next steps are thoughtfully inspected and ready for
+						action. We’ll follow up with a short summary and relevant action items.
+					</p>
+					<p className={styles.paragraph}>
+						After signing up, we will reach out within one business day to schedule our
+						conversation.
+					</p>
+					<div className={styles.spacer} />
+					<a className={styles.cta} href={`mailto:${email}?subject=Strategy Session`} target="_blank" rel="noopener noreferrer">Get Started</a>
+				</div>*/}
 				<div className={styles.offering}>
 					<h3 className={styles.subHeading}>
 						DTC Strategy
