@@ -8,7 +8,7 @@ function Header() {
 	return (
 		<div className={styles.hero}>
 			<div className={styles.navigation}>
-				<h1 className={styles.title}>Marandiz + Co.</h1>
+				<div className={styles.title} />
 				<div className={styles.links}>
 					<a className={styles.cta} href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">Contact</a>
 					<a className={styles.link} href={`https://twitter.com/${twitterHandle}`} target="_blank" rel="noopener noreferrer">Twitter</a>
