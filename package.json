@@ -36,7 +36,7 @@
     "classnames": "2.2.6",
     "react": "16.9.0",
     "react-dom": "16.9.0",
-    "react-ga": "2.6.0",
+    "react-ga": "2.7.0",
     "react-helmet": "5.2.1",
     "request": "2.88.0",
     "request-promise-native": "1.0.7",
@@ -59,7 +59,6 @@
     "node": "12.8.0"
   },
   "reactSnap": {
-    "inlineCss": true,
     "viewport": {
       "width": 320,
       "height": 821
