@@ -36,9 +36,13 @@
 }
 
 .title {
-	margin: 0;
-	font-family: $bennet-banner;
-	color: $almost-white;
+	width: 220px;
+	height: 34px;
+	margin: 0 $mobile-margins 0 0;
+	background-image: url('./logo.png');
+	background-repeat: no-repeat;
+	background-position: center left;
+	background-size: contain;
 }
 
 .header {
