@@ -59,6 +59,7 @@
     "node": "12.8.0"
   },
   "reactSnap": {
+    "inlineCss": true,
     "viewport": {
       "width": 320,
       "height": 821
