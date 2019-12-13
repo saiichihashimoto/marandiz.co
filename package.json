@@ -45,7 +45,7 @@
     "typeface-pt-sans": "0.0.72"
   },
   "devDependencies": {
-    "create-react-node-app": "3.6.48",
+    "create-react-node-app": "3.6.49",
     "cross-env": "6.0.3",
     "dotenv": "8.2.0",
     "eslint-config-saiichihashimoto": "2.0.62",
